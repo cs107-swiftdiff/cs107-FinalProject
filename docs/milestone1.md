@@ -132,64 +132,64 @@ BestorgAD custom classes will serve as the core data structures of the package:
 
 ## Classes 
 
-### inputFunction()
-  * inputs:
+### ```inputFunction()```
+  * Inputs:
     * function to evaluate derivative of
     * value at which to evaluate the derivative
-  * attributes:
-    * self.function
-    * self.value
-  * methods: 
-    * __init__() - construct instance 
-    * decompose() - returns a dictionary of elementary operations {'operation':[parameter(s) of the operation]} 
+  * Attributes:
+    * ```self.function```
+    * ```self.value```
+  * Methods: 
+    * ```__init__()``` - construct instance 
+    * ```decompose()``` - returns a dictionary of elementary operations {'operation':[parameter(s) of the operation]} 
 
-### elementaryOperation()
-  * inputs: 
+### ```elementaryOperation()```
+  * Inputs: 
     * intermediate trace values from previous calculations
     * elementary operation (from inputFunction.decompose() dictionary)
-  * attributes:
-    * self.input_intertraces - [inputed intermediate trace values]
-    * self.output_intertrace - outputed intermediate value
-    * self.output_interderivation - {'variable': symbolic partial derivative value with respect to the variable}
-  * methods:
-    * __init__ - construct instance
-    * evaluate_trace() - computes the trace value of the elementary operation and stores that value in self.intermediate_value
-    * elem_derive() - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
+  * Attributes:
+    * ```self.input_intertraces``` - [inputed intermediate trace values]
+    * ```self.output_intertrace``` - outputed intermediate value
+    * ```self.output_interderivation``` - {'variable': symbolic partial derivative value with respect to the variable}
+  * Methods:
+    * ```__init__``` - construct instance
+    * ```evaluate_trace()``` - computes the trace value of the elementary operation and stores that value in self.intermediate_value
+    * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
-      * __add__()
-      * __subtract__()
-      * __multiply__()
-      * __divide__()
+      * ```__add__()```
+      * ```__subtract__()```
+      * ```__multiply__()```
+      * ```__divide__()```
       * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.)
 
-### elementaryDerivation()
-  * inputs: 
+### ```elementaryDerivation()```
+  * Inputs: 
     * intermediate partial derivative values from previous calculations
     * intermediate trace values from previous calculations
     * elementary operation (from elementaryOperation.elem_derive())
-  * attributes:
-    * self.input_intertraces - [inputed intermediate trace values]
-    * self.output_partials - {'variable': numerical partial derivative value with respect to the variable}
-  * methods:
-    * __init__ - construct instance
-    * evaluate_partial() - computes the numerical partial derivative of the elementary operation with respect to a specific variable
-    * elem_derive() - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
+  * Attributes:
+    * ```self.input_intertraces``` - [inputed intermediate trace values]
+    * ```self.output_partials``` - {'variable': numerical partial derivative value with respect to the variable}
+  * Methods:
+    * ```__init__``` - construct instance
+    * ```evaluate_partial()``` - computes the numerical partial derivative of the elementary operation with respect to a specific variable
+    * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
-      * __add__()
-      * __subtract__()
-      * __multiply__()
-      * __divide__()
+      * ```__add__()```
+      * ```__subtract__()```
+      * ```__multiply__()```
+      * ```__divide__()```
       * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.)
 
-### visualAid()
-  * inputs: 
+### ```visualAid()```
+  * Inputs: 
     * function to generate a visual aids for
-  * attributes:
-    * self.function
-  * methods:
-    * __init__ - construct instance
-    * generate_graph() - generates a computational graph of the input function
-    * generate_tracetable() - generates a trace table for the input function with the following basic format:
+  * Attributes:
+    * ```self.function```
+  * Methods:
+    * ```__init__``` - construct instance
+    * ```generate_graph()``` - generates a computational graph of the input function
+    * ```generate_tracetable()``` - generates a trace table for the input function with the following basic format:
   
         | Trace | Elementary Operation | Value | Elementary Derivation | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{x}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{y}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{etc.}"> |
         |-------|----------------------|-------|-----------------------|-------------|-------------|---------------|

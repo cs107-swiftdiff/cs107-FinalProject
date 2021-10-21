@@ -5,7 +5,7 @@ This software performs automatic differentiation (AD) for the user. AD is widely
 
 **Definition of a Derivative:**
 
-$\lim_{h\to0}\frac{f(x + h) - f(x)}{h}$
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}\lim_{h\to0}\frac{f(x + h) - f(x)}{h}">
 
 Originally conceptualized by Robert Edwin Wengert in his 1964 paper, *A simple automatic derivative evaluation program,* automatic differentiation has garnered much interest in the computational science, machine learning, and optimization communities, with its various forms being implemented in industry-standard libraries such as TensorFlow. 
 
@@ -23,20 +23,19 @@ All functions are compositions of a finite set of elementary operations for whic
 
 The most simple type of AD is the forward accumulation mode, which applies the chain rule to each elementary operation in the forward primal trace, and then compute the corresponding derivative trace (computing the Jacobian of a function). Doing so is an efficient and matrix-free way of computing Jacobian-vector products, allowing us to derive the vector product in one forward pass. A computational graph can also complement tracing of the elementary operations by visualizing the relationship between the intermediate variables. 
 
-See the following example of a trace table and its corresponding computational graph for the function $f(x,y)=e^{(−(sin(x)−cos(y))2)}$:
+See the following example of a trace table and its corresponding computational graph for the function <img src="https://render.githubusercontent.com/render/math?math=\color{white}f(x,y)=e^{-(sin(x)-cos(y))^2}">:
 
-| Trace | Elementary Operation | Value      | Elementary Derivation        | $\nabla{x}$ | $\nabla{y}$               |
+| Trace | Elementary Operation | Value      | Elementary Derivation        | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{x}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{y}"> |
 |-------|----------------------|------------|-----------------------------|-------------|---------------------------|
-| $x$   | $x$                  | $\pi/2$    | 1                           | 1           | 0                         |
-| $y$   | $y$                  | $\pi/3$    | 1                           | 0           | 1                         |
-| $v_1$ | $sin(x)$             | 1          | $cos(x)\dot{x}$             | 0           | 0                         |
-| $v_2$ | $cos(y)$             | $1/2$      | $-sin(y)\dot{y}$            | 0           | $\sqrt{3/2}$              |
-| $v_3$ | $v_1 - v_2$          | $1/2$      | $\dot{v_1} - \dot{v_2}$ | 0           | $-\sqrt{3}/2$             |
-| $v_4$ | $-v_3^2$             | $-1/4$     | $-2 v_3 \dot{(v_3)}$        | 0           | $\sqrt{3}/2$              |
-| $v_5$ | $e^{v_4}$            | $e^{-1/4}$ | $e^{v_4} \dot{(v_4)}$       | 0           | $e^{(-1/4)} * \sqrt{3}/2$ |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}x">   | <img src="https://render.githubusercontent.com/render/math?math=\color{white}x"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\pi/2"> | 1 | 1 | 0 |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}y">   | <img src="https://render.githubusercontent.com/render/math?math=\color{white}y"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\pi/3"> | 1 | 0  | 1 |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}v_1"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}sin(x)"> | 1 | <img src="https://render.githubusercontent.com/render/math?math=\color{white}cos(x)\dot{x}"> | 0 | 0 |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}v_2"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}cos(y)"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}1/2"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}-sin(y)\dot{y}"> | 0 | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\sqrt{3/2}"> |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}v_3"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}v_1-v_2"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}1/2"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\dot{v_1} - \dot{v_2}"> | 0 | <img src="https://render.githubusercontent.com/render/math?math=\color{white}-\sqrt{3}/2"> |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}v_4"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}-v_3^2"> |<img src="https://render.githubusercontent.com/render/math?math=\color{white}-1/4"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}-2 v_3 \dot{(v_3)}"> | 0 | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\sqrt{3}/2"> |
+| <img src="https://render.githubusercontent.com/render/math?math=\color{white}v_5"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}e^{v_4}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}e^{-1/4}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}e^{v_4} \dot{(v_4)}">| 0 | <img src="https://render.githubusercontent.com/render/math?math=\color{white}e^{(-1/4)} * \sqrt{3}/2"> |
 
-
-  ![Computational Graph of f(x, y)](https://github.com/cs107-bestorg/cs107-FinalProject/tree/m1/docs/computational_graph.png)
+![Computational Graph of f(x, y)](computational_graph.png?raw=true)
 
   In reverse mode, partial derivative values are stored at each node within a graph, and the full derivative is only computed using the chain rule during the backward pass. 
 
@@ -89,7 +88,7 @@ Users can call the following functions after importing our package:
 cs107-FinalProject/
 ├── docs
 │   ├── milestone1
-│   ├── milestone2
+|   └── milestone2
 ├── ADpackage
 │   ├── __init__.py
 |   ├── ADmain.py
@@ -106,7 +105,7 @@ cs107-FinalProject/
 ├── README.md
 ├── requirements.txt
 ├──.travis.yml
-├──.codecov.yml
+└──.codecov.yml
 ```
 
 ## Modules:
@@ -192,7 +191,7 @@ BestorgAD custom classes will serve as the core data structures of the package:
     * generate_graph() - generates a computational graph of the input function
     * generate_tracetable() - generates a trace table for the input function with the following basic format:
   
-        | Trace | Elementary Operation | Value | Elementary Derivation | $\nabla{x}$ | $\nabla{y}$ | $\nabla{etc}$ |
+        | Trace | Elementary Operation | Value | Elementary Derivation | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{x}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{y}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{white}\nabla{etc.}"> |
         |-------|----------------------|-------|-----------------------|-------------|-------------|---------------|
         | ... | ... | ... |  ... | ... | ... | ... |
 

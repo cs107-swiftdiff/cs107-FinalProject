@@ -142,6 +142,12 @@ We will distribute our package via PyPI and create a landing page with detailed 
 
 # Implementation
 BestorgAD relies on tuples, lists, dictionaries, ndarray, and trees as core basic data structures. BestorgAD custom classes will serve to facilitate the flow of data within the package.
+Some examples:
+* tuples: (value of function,its derivative)
+* Lists: store intermediate trace values.
+* Dictionaries: match each opearion and its parameters.
+* ndarray: 
+* trees: help to build the structure of computional graph.
 
 ## Classes 
 

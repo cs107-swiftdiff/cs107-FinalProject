@@ -29,7 +29,7 @@ If f was a matrix of multiple functions:
 <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\f=\begin{bmatrix}f_1(x,y)\\f_2(x,y)\end{bmatrix}">
 
 The Jacobian matrix would look like:
-<img src="https://render.githubusercontent.com/render/math?math=\color{gray}J=\begin{bmatrix}\frac{\partial f{1}}{\partial x}\frac{\partial f_{1}}{\partial y}\\ \frac{\partial f_{2}}{\partial x}\frac{\partial f_{2}}{\partial y}\end{bmatrix}">
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}J=\begin{bmatrix}\frac{\partial f_{1}}{\partial x}\frac{\partial f_{1}}{\partial y}\\ \frac{\partial f_{2}}{\partial x}\frac{\partial f_{2}}{\partial y}\end{bmatrix}">
 
 See the following example of a trace table and its corresponding computational graph for the function <img src="https://render.githubusercontent.com/render/math?math=\color{gray}f(x,y)=e^{-(sin(x)-cos(y))^2}">:
 

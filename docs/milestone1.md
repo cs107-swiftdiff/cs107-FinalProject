@@ -273,3 +273,4 @@ a copyleft license that makes the complete source code of licensed works and mod
 
 ### Questions for 107 Staff:
 * Should outputs of methods within classes be stored as attributes of those classes? (e.g. [elementaryOperation.elemDerive -> self.output_interderivation](#elementaryOperation()))
+* Proposed name change - SleekDiff

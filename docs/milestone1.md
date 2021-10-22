@@ -26,16 +26,10 @@ The most simple type of AD is the forward accumulation mode, which applies the c
 A Jacobian matrix is simply a matrix of first-order derivatives of a function:
 
 If f was a matrix of multiple functions:
-$$f=\begin{bmatrix} f_1(x,y) \\ f_2(x,y) \end{bmatrix}$$
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\$$f=\begin{bmatrix}f_1(x,y)\\f_2(x,y)\end{bmatrix}$$">
 
 The Jacobian matrix would look like:
-$$\begin{align*}
-  J = 
-  \begin{bmatrix}
-    \partial f_{1} / \partial x &amp; \partial f_{1} / \partial y \\
-    \partial f_{2} / \partial x &amp; \partial f_{2} / \partial y
-  \end{bmatrix}
-\end{align*}$$
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\$$\begin{align*}J=\begin{bmatrix}\partialf{1}/\partial x&amp;\partialf_{1}/\partialy\\\partialf_{2} / \partial x &amp; \partialf_{2}/\partialy\end{bmatrix}\end{align*}$$">
 
 
 See the following example of a trace table and its corresponding computational graph for the function <img src="https://render.githubusercontent.com/render/math?math=\color{gray}f(x,y)=e^{-(sin(x)-cos(y))^2}">:

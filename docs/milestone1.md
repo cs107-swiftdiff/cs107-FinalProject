@@ -23,6 +23,21 @@ All functions are compositions of a finite set of elementary operations for whic
 
 The most simple type of AD is the forward accumulation mode, which applies the chain rule to each elementary operation in the forward primal trace, and then compute the corresponding derivative trace. This allows us to compute the Jacobians, or first-order partial derivatives, of vector-valued functions. Doing so is an efficient way of computing Jacobian-vector products, allowing us to derive the vector product in one forward pass. A computational graph can also complement tracing of the elementary operations by visualizing the relationship between the intermediate variables. 
 
+A Jacobian matrix is simply a matrix of first-order derivatives of a function:
+
+If f was a matrix of multiple functions:
+$$f=\begin{bmatrix} f_1(x,y) \\ f_2(x,y) \end{bmatrix}$$
+
+The Jacobian matrix would look like:
+$$\begin{align*}
+  J = 
+  \begin{bmatrix}
+    \partial f_{1} / \partial x &amp; \partial f_{1} / \partial y \\
+    \partial f_{2} / \partial x &amp; \partial f_{2} / \partial y
+  \end{bmatrix}
+\end{align*}$$
+
+
 See the following example of a trace table and its corresponding computational graph for the function <img src="https://render.githubusercontent.com/render/math?math=\color{gray}f(x,y)=e^{-(sin(x)-cos(y))^2}">:
 
 | <img src="https://render.githubusercontent.com/render/math?math=\color{gray}Trace"> | <img src="https://render.githubusercontent.com/render/math?math=\color{gray}Elementary Operation"> | <img src="https://render.githubusercontent.com/render/math?math=\color{gray}Value">      | <img src="https://render.githubusercontent.com/render/math?math=\color{gray}Elementary Derivation">        | <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\nabla{x}"> | <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\nabla{y}"> |

@@ -21,7 +21,7 @@ Synethesizing numerical and symbolic differentiation methods, automatic differen
 
 All functions are compositions of a finite set of elementary operations for which derivatives are known. Combining the derivatives of these elementary functions through the chain rule results in the composite derivative of the function. 
 
-The most simple type of AD is the forward accumulation mode, which applies the chain rule to each elementary operation in the forward primal trace, and then compute the corresponding derivative trace (computing the Jacobian of a function). Doing so is an efficient and matrix-free way of computing Jacobian-vector products, allowing us to derive the vector product in one forward pass. A computational graph can also complement tracing of the elementary operations by visualizing the relationship between the intermediate variables. 
+The most simple type of AD is the forward accumulation mode, which applies the chain rule to each elementary operation in the forward primal trace, and then compute the corresponding derivative trace. This allows us to compute the Jacobians, or first-order partial derivatives, of vector-valued functions. Doing so is an efficient way of computing Jacobian-vector products, allowing us to derive the vector product in one forward pass. A computational graph can also complement tracing of the elementary operations by visualizing the relationship between the intermediate variables. 
 
 See the following example of a trace table and its corresponding computational graph for the function <img src="https://render.githubusercontent.com/render/math?math=\color{gray}f(x,y)=e^{-(sin(x)-cos(y))^2}">:
 
@@ -57,6 +57,10 @@ activate vir_name
 Install the package:
 ```
 conda install -n BestorgAD
+```
+Users can also clone this repo:
+```
+git clone https://github.com/cs107-bestorg/cs107-FinalProject
 ```
 
 ## Interacting with the GUI / Text UI
@@ -129,7 +133,7 @@ We will distribute our package via PyPI and create a landing page with detailed 
 [Python package boilerplate](https://github.com/mtchavez/python-package-boilerplate) instead.
 
 # Implementation
-BestorgAD custom classes will serve as the core data structures of the package:
+BestorgAD relies on tuples, lists, dictionaries, ndarray, and trees as core basic data structures. BestorgAD custom classes will serve to facilitate the flow of data within the package.
 
 ## Classes 
 
@@ -184,7 +188,7 @@ BestorgAD custom classes will serve as the core data structures of the package:
 
 ### ```visualAid()```
   * Inputs: 
-    * function to generate a visual aids for
+    * function to generate visual aids for
   * Attributes:
     * ```self.function```
   * Methods:

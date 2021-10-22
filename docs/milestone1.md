@@ -1,5 +1,7 @@
+![Logo](Logo.png?raw=true,size=10)
+
 # Introduction
-This software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
+BestOrg software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
 
 # Background
 
@@ -22,6 +24,14 @@ Synethesizing numerical and symbolic differentiation methods, automatic differen
 All functions are compositions of a finite set of elementary operations for which derivatives are known. Combining the derivatives of these elementary functions through the chain rule results in the composite derivative of the function. 
 
 The most simple type of AD is the forward accumulation mode, which applies the chain rule to each elementary operation in the forward primal trace, and then compute the corresponding derivative trace. This allows us to compute the Jacobians, or first-order partial derivatives, of vector-valued functions. Doing so is an efficient way of computing Jacobian-vector products, allowing us to derive the vector product in one forward pass. A computational graph can also complement tracing of the elementary operations by visualizing the relationship between the intermediate variables. 
+
+A Jacobian matrix is simply a matrix of first-order derivatives of a function:
+
+If f was a matrix of multiple functions:
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\f=\begin{bmatrix}f_1(x,y)\\f_2(x,y)\end{bmatrix}">
+
+The Jacobian matrix would look like:
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}J=\begin{bmatrix}\frac{\partial f_{1}}{\partial x}\frac{\partial f_{1}}{\partial y}\\ \frac{\partial f_{2}}{\partial x}\frac{\partial f_{2}}{\partial y}\end{bmatrix}">
 
 See the following example of a trace table and its corresponding computational graph for the function <img src="https://render.githubusercontent.com/render/math?math=\color{gray}f(x,y)=e^{-(sin(x)-cos(y))^2}">:
 
@@ -134,6 +144,12 @@ We will distribute our package via PyPI and create a landing page with detailed 
 
 # Implementation
 BestorgAD relies on tuples, lists, dictionaries, ndarray, and trees as core basic data structures. BestorgAD custom classes will serve to facilitate the flow of data within the package.
+Some examples:
+* tuples: (value of function,its derivative) may change in the future
+* Lists: store intermediate trace values.
+* Dictionaries: match each opearion and its parameters.
+* ndarray: do not have specific examples, but may use to store lists
+* trees: help to build the structure of computional graph.
 
 ## Classes 
 
@@ -259,3 +275,4 @@ a copyleft license that makes the complete source code of licensed works and mod
 
 ### Questions for 107 Staff:
 * Should outputs of methods within classes be stored as attributes of those classes? (e.g. [elementaryOperation.elemDerive -> self.output_interderivation](#elementaryOperation()))
+* Proposed name change - SleekDiff

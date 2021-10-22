@@ -184,7 +184,7 @@ BestorgAD custom classes will serve as the core data structures of the package:
 
 ### ```visualAid()```
   * Inputs: 
-    * function to generate a visual aids for
+    * function to generate visual aids for
   * Attributes:
     * ```self.function```
   * Methods:

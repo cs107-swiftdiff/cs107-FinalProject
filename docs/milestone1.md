@@ -26,7 +26,7 @@ The most simple type of AD is the forward accumulation mode, which applies the c
 A Jacobian matrix is simply a matrix of first-order derivatives of a function:
 
 If f was a matrix of multiple functions:
-<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\$$f=\begin{bmatrix}f_1(x,y)\\f_2(x,y)\end{bmatrix}$$">
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\f=\begin{bmatrix}f_1(x,y)\\f_2(x,y)\end{bmatrix}">
 
 The Jacobian matrix would look like:
 <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\\begin{align*}J=\begin{bmatrix}\partialf{1}/\partial x&amp;\partialf_{1}/\partialy\\\partialf_{2}/\partialx&amp;\partialf_{2}/\partialy\end{bmatrix}\end{align*}">

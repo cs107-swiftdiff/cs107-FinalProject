@@ -1,7 +1,7 @@
 ![Logo](Logo.png?raw=true,size=10)
 
 # Introduction
-This software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
+BestOrg software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
 
 # Background
 

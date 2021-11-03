@@ -11,7 +11,7 @@ BestOrg software performs automatic differentiation (AD) for the user. AD is wid
 
 Originally conceptualized by Robert Edwin Wengert in his 1964 paper, *A simple automatic derivative evaluation program,* automatic differentiation has garnered much interest in the computational science, machine learning, and optimization communities, with its various forms being implemented in industry-standard libraries such as TensorFlow. 
 
-Automatic differentiation, also known as algorithmic differentiation, computational differentiation, auto-differentiation, or autodiff, can be thought of as a synethesis of both numerical and symbolic differentiation methods.
+Automatic differentiation, also known as algorithmic differentiation, computational differentiation, auto-differentiation, or autodiff, is differenet from either numerical or symbolic differentiation methods.
 
 [Numerical differentiation (ND)](https://en.wikibooks.org/wiki/Introduction_to_Numerical_Methods/Numerical_Differentiation) is a class of methods that computes derivatives through computing discrete numerical approximations of the derivative. Common ND approaches include finite difference methods, which convert differential equations into a algebraically solvable system of linear equations. However, ND suffers from two main sources of inaccuracy - truncation and roundoff errors - as its precision is dependant on the step size of the derivative calculations. Furthermore there is a tradeoff in error reduction of trunction and roundoff errors, as smaller values of delta reduce truncation error but exacerbate roundoff error due to limited floating point accuracy.
 
@@ -19,7 +19,7 @@ Automatic differentiation, also known as algorithmic differentiation, computatio
 
 ## Components of Automatic Differentiation:
 
-Synethesizing numerical and symbolic differentiation methods, automatic differentiation evalutes derivatives by breaking down complex functions into elementary functions to enable simple calculations intermediate values and subsequent efficient computation of the composite derivative.
+Automatic differentiation evalutes derivatives by breaking down complex functions into elementary functions to enable simple calculations intermediate values and subsequent efficient computation of the composite derivative.
 
 All functions are compositions of a finite set of elementary operations for which derivatives are known. Combining the derivatives of these elementary functions through the chain rule results in the composite derivative of the function. 
 

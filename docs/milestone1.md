@@ -280,6 +280,8 @@ a copyleft license that makes the complete source code of licensed works and mod
 # Feedback
 Introduction (1.75/2): Your introduction should motivate the need for automatic differentiation. Why is it better than other methods?
 
+We added specific information in the introduction that emphasizes why AD is better than numerical and symbolic differentiation.
+
 Background (1.9/2): I would not describe AD as a combination of numerical and symbolic differentiation. Numerical differentiation approximates a derivative, while derivatives obtained through AD are exact.
 
 Example usage (3/3)

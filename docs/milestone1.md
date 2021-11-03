@@ -177,11 +177,12 @@ Some examples:
     * ```evaluate_trace()``` - computes the trace value of the elementary operation and stores that value in self.intermediate_value
     * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
-      * ```__add__()```
-      * ```__subtract__()```
-      * ```__multiply__()```
-      * ```__divide__()```
-      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.)
+      * ```__add__()``` - e.g. ComplexNumber(self.real + other.real, self.imaginary + other.imaginary) 
+      * ```__subtract__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
+      * ```__multiply__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
+      * ```__divide__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
+      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.) 
+        * e.g. ```__sin__()``` - e.g. sin(self.real) * cosh(self.imaginary) + i cos(self.real) * sinh(self.imaginary))
 
 ### ```elementaryDerivation()```
   * Inputs: 
@@ -196,11 +197,12 @@ Some examples:
     * ```evaluate_partial()``` - computes the numerical partial derivative of the elementary operation with respect to a specific variable
     * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
-      * ```__add__()```
-      * ```__subtract__()```
-      * ```__multiply__()```
-      * ```__divide__()```
-      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.)
+      * ```__add__()``` - e.g. ComplexNumber(self.real + other.real, self.imaginary + other.imaginary) 
+      * ```__subtract__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
+      * ```__multiply__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
+      * ```__divide__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
+      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.) 
+        * e.g. ```__sin__()``` - e.g. sin(self.real) * cosh(self.imaginary) + i cos(self.real) * sinh(self.imaginary))
 
 ### ```visualAid()```
   * Inputs: 
@@ -291,5 +293,7 @@ Example usage (3/3)
 Software organization (2/2): Nice job!
 
 Implementation (3.8/4): It would have been nice to see an example of how you plan to deal with elementary functions such as sine, cosine, and exponentials.
+
+*Addressed feedback by adding detailed implementations of elementary operations (add, subtract, multiply, divide) and an example of sine overloading implementation for complex numbers using hyperbolic sine.*
 
 Licensing (2/2)

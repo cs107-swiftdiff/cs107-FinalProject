@@ -276,3 +276,16 @@ a copyleft license that makes the complete source code of licensed works and mod
 ### Questions for 107 Staff:
 * Should outputs of methods within classes be stored as attributes of those classes? (e.g. [elementaryOperation.elemDerive -> self.output_interderivation](#elementaryOperation()))
 * Proposed name change - SleekDiff
+
+# Feedback
+Introduction (1.75/2): Your introduction should motivate the need for automatic differentiation. Why is it better than other methods?
+
+Background (1.9/2): I would not describe AD as a combination of numerical and symbolic differentiation. Numerical differentiation approximates a derivative, while derivatives obtained through AD are exact.
+
+Example usage (3/3)
+
+Software organization (2/2): Nice job!
+
+Implementation (3.8/4): It would have been nice to see an example of how you plan to deal with elementary functions such as sine, cosine, and exponentials.
+
+Licensing (2/2)

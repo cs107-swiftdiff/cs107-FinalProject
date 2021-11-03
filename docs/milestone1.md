@@ -284,6 +284,8 @@ We added specific information in the introduction that emphasizes why AD is bett
 
 Background (1.9/2): I would not describe AD as a combination of numerical and symbolic differentiation. Numerical differentiation approximates a derivative, while derivatives obtained through AD are exact.
 
+We rewrote that part by saying AD is different from numerical and symbolic differentiation. 
+
 Example usage (3/3)
 
 Software organization (2/2): Nice job!

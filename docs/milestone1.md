@@ -1,7 +1,7 @@
 <img src="https://github.com/cs107-bestorg/cs107-FinalProject/blob/main/docs/Logo.png" alt="Logo" width="400" height="330">
 
 # Introduction
-BestOrg software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
+BestOrg software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. Our AD software, BestOrg, sequentially evaluates elementary functions, and avoids the complexity of symbolic differentiation and precision issues of numerical differentiation. By overcoming all the setbacks of both finite difference methods and symbolic derivatives, AD is the most efficient and effective method. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
 
 # Background
 
@@ -11,7 +11,7 @@ BestOrg software performs automatic differentiation (AD) for the user. AD is wid
 
 Originally conceptualized by Robert Edwin Wengert in his 1964 paper, *A simple automatic derivative evaluation program,* automatic differentiation has garnered much interest in the computational science, machine learning, and optimization communities, with its various forms being implemented in industry-standard libraries such as TensorFlow. 
 
-Automatic differentiation, also known as algorithmic differentiation, computational differentiation, auto-differentiation, or autodiff, can be thought of as a synethesis of both numerical and symbolic differentiation methods.
+Automatic differentiation, also known as algorithmic differentiation, computational differentiation, auto-differentiation, or autodiff, is different from either numerical or symbolic differentiation methods.
 
 [Numerical differentiation (ND)](https://en.wikibooks.org/wiki/Introduction_to_Numerical_Methods/Numerical_Differentiation) is a class of methods that computes derivatives through computing discrete numerical approximations of the derivative. Common ND approaches include finite difference methods, which convert differential equations into a algebraically solvable system of linear equations. However, ND suffers from two main sources of inaccuracy - truncation and roundoff errors - as its precision is dependant on the step size of the derivative calculations. Furthermore there is a tradeoff in error reduction of trunction and roundoff errors, as smaller values of delta reduce truncation error but exacerbate roundoff error due to limited floating point accuracy.
 
@@ -19,7 +19,7 @@ Automatic differentiation, also known as algorithmic differentiation, computatio
 
 ## Components of Automatic Differentiation:
 
-Synethesizing numerical and symbolic differentiation methods, automatic differentiation evalutes derivatives by breaking down complex functions into elementary functions to enable simple calculations intermediate values and subsequent efficient computation of the composite derivative.
+Different from numerical differentiation and symbolic differentiation, automatic differentiation evalutes derivatives by breaking down complex functions into elementary functions to enable simple calculations intermediate values and subsequent efficient computation of the composite derivative.
 
 All functions are compositions of a finite set of elementary operations for which derivatives are known. Combining the derivatives of these elementary functions through the chain rule results in the composite derivative of the function. 
 
@@ -177,11 +177,12 @@ Some examples:
     * ```evaluate_trace()``` - computes the trace value of the elementary operation and stores that value in self.intermediate_value
     * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
-      * ```__add__()```
-      * ```__subtract__()```
-      * ```__multiply__()```
-      * ```__divide__()```
-      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.)
+      * ```__add__()``` - e.g. ComplexNumber(self.real + other.real, self.imaginary + other.imaginary) 
+      * ```__subtract__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
+      * ```__multiply__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
+      * ```__divide__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
+      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.) 
+        * e.g. ```__sin__()``` - e.g. sin(self.real) * cosh(self.imaginary) + i cos(self.real) * sinh(self.imaginary))
 
 ### ```elementaryDerivation()```
   * Inputs: 
@@ -196,11 +197,12 @@ Some examples:
     * ```evaluate_partial()``` - computes the numerical partial derivative of the elementary operation with respect to a specific variable
     * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
-      * ```__add__()```
-      * ```__subtract__()```
-      * ```__multiply__()```
-      * ```__divide__()```
-      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.)
+      * ```__add__()``` - e.g. ComplexNumber(self.real + other.real, self.imaginary + other.imaginary) 
+      * ```__subtract__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
+      * ```__multiply__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
+      * ```__divide__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
+      * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.) 
+        * e.g. ```__sin__()``` - e.g. sin(self.real) * cosh(self.imaginary) + i cos(self.real) * sinh(self.imaginary))
 
 ### ```visualAid()```
   * Inputs: 
@@ -276,3 +278,22 @@ a copyleft license that makes the complete source code of licensed works and mod
 ### Questions for 107 Staff:
 * Should outputs of methods within classes be stored as attributes of those classes? (e.g. [elementaryOperation.elemDerive -> self.output_interderivation](#elementaryOperation()))
 * Proposed name change - SleekDiff
+
+# Feedback
+Introduction (1.75/2): Your introduction should motivate the need for automatic differentiation. Why is it better than other methods?
+
+We added specific information in the introduction that emphasizes why AD is better than numerical and symbolic differentiation.
+
+Background (1.9/2): I would not describe AD as a combination of numerical and symbolic differentiation. Numerical differentiation approximates a derivative, while derivatives obtained through AD are exact.
+
+We rewrote that part by saying AD is different from numerical and symbolic differentiation. 
+
+Example usage (3/3)
+
+Software organization (2/2): Nice job!
+
+Implementation (3.8/4): It would have been nice to see an example of how you plan to deal with elementary functions such as sine, cosine, and exponentials.
+
+*Addressed feedback by adding detailed implementations of elementary operations (add, subtract, multiply, divide) and an example of sine overloading implementation for complex numbers using hyperbolic sine.*
+
+Licensing (2/2)

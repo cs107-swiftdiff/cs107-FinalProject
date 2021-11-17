@@ -117,11 +117,11 @@ class AutoDiff():
         # implement vector multiplication
         return AutoDiff(value, derivative)
     
-    def cot(self):
-        value = np.cot(self.value)
-        derivative = (1/np.sin(self.value)**2) * self.derivative
-        # implement vector multiplication
-        return AutoDiff(value, derivative)
+    # def cot(self):
+    #     value = np.cot(self.value)
+    #     derivative = (1/np.sin(self.value)**2) * self.derivative
+    #     # implement vector multiplication
+    #     return AutoDiff(value, derivative)
     
     def exp(self):
         # value = self.value
@@ -130,17 +130,7 @@ class AutoDiff():
         derivative = np.exp(self.value) * self.derivative
         # implement vector exponentiation
         return AutoDiff(value, derivative)
-    
-    # def power(self, p):
-    #     value = self.value
-    #     derivative = self.derivative
-    #     float(p)
-    #     if not value > 0 and p > 1: raise ValueError('Cannot take power of non-positive values')
-    #     # if value == 0 and p < 1:
-    #     #     raise ZeroDivisionError
-    #     value = np.power(value, p)
-    #     derivative = np.power((p * self.derivative * value), (p - 1))
-    #     return AutoDiff(value, derivative)
+
 
     def log(self):
         if not self.value > 0: raise ValueError("Cannot take ln of non-positive values")

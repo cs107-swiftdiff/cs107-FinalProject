@@ -1,4 +1,4 @@
-from ADforward import AutoDiff
+from AD.ADforward import AutoDiff
 import numpy as np
 import pytest
 
@@ -210,7 +210,7 @@ def test_exp():
 def test_log():
     x = AutoDiff(0.5, 1)
     y = x.log()
-    assert y.val == np.log(0.5)
+    assert y.value == np.log(0.5)
     assert y.der == 1 / 0.5
 
 def test_log_valueerror():
@@ -222,7 +222,7 @@ def test_log_valueerror():
 def test_sqrt():
     x = AutoDiff (0,1,'x')
     y = x.sqrt()
-    assert y.val == np.sqrt(0.5)
+    assert y.value == np.sqrt(0.5)
     assert y.der == -0.5 / (x**0.5)
 
 def test_sqrt_valueerror():

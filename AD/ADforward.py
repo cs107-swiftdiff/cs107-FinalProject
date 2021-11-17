@@ -24,7 +24,15 @@ class AutoDiff():
     
     def __radd__(self, other):
         return self.__add__(other)
+    
+    def __neg__(self,other):
 
+        value=-self.value
+        derivative=-self.derivative
+
+        return AutoDiff(value,derivative)
+    
+    
     def __sub__(self, other):
         try:
             value = self.value - other.value
@@ -34,15 +42,11 @@ class AutoDiff():
             derivative = self.derivative
         return AutoDiff(value, derivative)
 
+
     def __rsub__(self, other):
         return -(self.__sub__(other))
 
-    def __neg__(self,other):
 
-        value=-self.value
-        derivative=-self.derivative
-
-        return AutoDiff(value,derivative)
 
     def __truediv__(self, other):
         try:

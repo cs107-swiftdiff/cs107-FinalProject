@@ -117,7 +117,7 @@ def test_truediv():
     x = AutoDiff(1, 1)
     y = AutoDiff(1, 5)
     z = x / y
-    assert z.value == 0.5
+    assert z.value == 1
     assert z.derivative == -4
 
 def test_truediv_constant():

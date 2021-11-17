@@ -139,7 +139,8 @@ class AutoDiff():
         return AutoDiff(value, derivative)
     
     def sqrt(self):
-        if not self.value > 0: raise ValueError('Cannot take sqrt of non-positive values')
+        if self.value < 0: raise ValueError('Cannot take sqrt of non-positive values')
+        if self.value == 0: raise ZeroDivisionError
         value = np.sqrt(self.value)
         derivative = 1 / 2 * self.derivative * (self.value ** -0.5)
         return AutoDiff(value, derivative)
@@ -150,9 +151,9 @@ class AutoDiff():
 # TESTS
 
 # initial = 2
-x = AutoDiff(1,1)
-y=AutoDiff(2,2)
-f=x-y
+x = AutoDiff(-1,1)
+# y=AutoDiff(2,2)
+f=x.sqrt()
 print("value", f.value, "derivative", f.derivative)
 
 # for a, b in itertools.product(range(1, 10), range(1, 10)):

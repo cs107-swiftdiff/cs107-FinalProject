@@ -115,10 +115,10 @@ def test_rmul_constant():
 
 def test_truediv():
     x = AutoDiff(1, 1)
-    y = AutoDiff(2, 2)
+    y = AutoDiff(1, 5)
     z = x / y
     assert z.value == 0.5
-    assert z.derivative == 4
+    assert z.derivative == -4
 
 def test_truediv_constant():
     x = AutoDiff(1, 1)

@@ -54,7 +54,7 @@ def test_sub_constant():
 def test_sub():
     x = AutoDiff(1, 1)
     y = AutoDiff(2, 2)
-    z = y-x
+    z = x-y
     assert z.value == -1
     assert z.derivative == -1
 

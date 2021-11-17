@@ -91,7 +91,7 @@ def test_mul():
     assert z.derivative == 4
 
 def test_mul_constant():
-    x = AutoDiff(1, 1))
+    x = AutoDiff(1, 1)
     z = x * 2
     assert z.value == 2
     assert z.derivative == 2
@@ -121,7 +121,7 @@ def test_truediv():
     assert z.derivative == 4
 
 def test_truediv_constant():
-    x = AutoDiff(1, 1))
+    x = AutoDiff(1, 1)
     z = x * 2
     assert z.value == 2
     assert z.derivative == 2

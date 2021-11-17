@@ -51,7 +51,7 @@ class AutoDiff():
     def __truediv__(self, other):
         try:
             value=self.value/other.value
-            derivative=(self.derivative*other.value-self.value*other.derivative)/(other.derivative)**2
+            derivative=(self.derivative*other.value-self.value*other.derivative)/(other.value)**2
         except AttributeError:
             value=self.value/other
             derivative=self.derivative/other

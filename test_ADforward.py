@@ -189,8 +189,9 @@ def test_sin():
 def test_tan():
     x = AutoDiff(0.5, 1)
     y = x.tan()
+    yder=1 / (np.sin(0.5)**2)
     assert y.value == np.tan(0.5)
-    assert y.derivative == 1 / (np.sin(0.5)**2)
+    assert y.derivative == yder
 
 # # Testing __cot__
 # def test_cot():

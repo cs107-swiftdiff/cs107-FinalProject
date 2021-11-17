@@ -7,4 +7,6 @@ before_install:
 script:
     - pytest --cov=./
 after_success:
-    - codecov
+    - curl -Os https://uploader.codecov.io/latest/linux/codecov
+    - chmod +x codecov
+    - ./codecov -t 52056cf4-dbc4-40a2-bc76-63b7afd1ae93

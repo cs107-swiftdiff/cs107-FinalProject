@@ -158,7 +158,7 @@ def test_pow():
     x=AutoDiff(2, 2)
     y=AutoDiff(3, 3) 
     z=x**y
-    zder=8*(3*np.log(2)+8*3/2) 
+    zder=8*(3*np.log(2)+3*2/2) 
     assert z.value==8
     assert z.derivative== zder
 def test_pow_zero():

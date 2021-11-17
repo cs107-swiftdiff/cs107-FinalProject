@@ -167,7 +167,7 @@ def test_pow_zero():
         y=x**0.5
 
 def test_pow_valueerror():
-        x=AutoDiff(-1,1)
+    x=AutoDiff(-1,1)
     with pytest.raises(ValueError):
         y=x**0.5
 

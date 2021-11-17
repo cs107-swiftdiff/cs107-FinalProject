@@ -1,6 +1,6 @@
 import itertools
 import numpy as np
-
+import math
 
 class AutoDiff():
     def __init__(self, value, derivative=1):
@@ -95,7 +95,7 @@ class AutoDiff():
         if isinstance(p,AutoDiff):
             
             value=value_base**p.value  # implement vector multiplication
-            derivative=value*(p.derivative*np.log(value_base)+p.value*derivative_base/value_base)
+            derivative=value*(p.derivative*math.log(value_base)+p.value*derivative_base/value_base) #use np.log when doing vector
             
         return AutoDiff(value, derivative)
 
@@ -134,7 +134,7 @@ class AutoDiff():
 
     def log(self):
         if not self.value > 0: raise ValueError("Cannot take ln of non-positive values")
-        value = np.log(self.value)
+        value = math.log(self.value)
         derivative = 1 / self.value
         return AutoDiff(value, derivative)
     

@@ -189,7 +189,7 @@ def test_sin():
 def test_tan():
     x = AutoDiff(0.5, 1)
     y = x.tan()
-    yder=1 / (np.sin(0.5)**2)
+    yder=1 / (np.cos(0.5)**2)
     assert y.value == np.tan(0.5)
     assert y.derivative == yder
 

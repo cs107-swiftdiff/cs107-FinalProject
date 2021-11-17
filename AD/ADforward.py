@@ -35,7 +35,7 @@ class AutoDiff():
         return AutoDiff(value, derivative)
 
     def __rsub__(self, other):
-        return self.__sub__(other)
+        return -(self.__sub__(other))
 
     def __neg__(self,other):
 
@@ -156,7 +156,10 @@ class AutoDiff():
 # TESTS
 
 # initial = 2
-# x = AutoDiff(initial)
+x = AutoDiff(1,1)
+y=AutoDiff(2,2)
+f=x-y
+print("value", f.value, "derivative", f.derivative)
 
 # for a, b in itertools.product(range(1, 10), range(1, 10)):
 #     f = a * np.cos(x) + b

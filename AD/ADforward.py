@@ -151,10 +151,10 @@ class AutoDiff():
 # TESTS
 
 # initial = 2
-x = AutoDiff(-1,1)
-# y=AutoDiff(2,2)
-f=x.sqrt()
-print("value", f.value, "derivative", f.derivative)
+# x = AutoDiff(-1,1)
+# # y=AutoDiff(2,2)
+# f=x.sqrt()
+# print("value", f.value, "derivative", f.derivative)
 
 # for a, b in itertools.product(range(1, 10), range(1, 10)):
 #     f = a * np.cos(x) + b

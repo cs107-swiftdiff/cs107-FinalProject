@@ -192,12 +192,12 @@ def test_tan():
     assert y.value == np.tan(0.5)
     assert y.derivative == 1 / (np.sin(0.5)**2)
 
-# Testing __cot__
-def test_cot():
-    x = AutoDiff(0.5, 1)
-    y = x.cot()
-    assert y.value == 1 / np.tan(0.5)
-    assert y.derivative == -1 / (np.cos(0.5)**2)
+# # Testing __cot__
+# def test_cot():
+#     x = AutoDiff(0.5, 1)
+#     y = x.cot()
+#     assert y.value == 1 / np.tan(0.5)
+#     assert y.derivative == -1 / (np.cos(0.5)**2)
 
 # Testing __exp__
 def test_exp():

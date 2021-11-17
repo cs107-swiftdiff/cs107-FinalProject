@@ -25,7 +25,7 @@ class AutoDiff():
     def __radd__(self, other):
         return self.__add__(other)
     
-    def __neg__(self,other):
+    def __neg__(self):
 
         value=-self.value
         derivative=-self.derivative

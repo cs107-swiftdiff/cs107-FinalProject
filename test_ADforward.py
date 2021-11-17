@@ -211,7 +211,7 @@ def test_log():
     x = AutoDiff(0.5, 1)
     y = x.log()
     assert y.value == np.log(0.5)
-    assert y.der == 1 / 0.5
+    assert y.derivative == 1 / 0.5
 
 def test_log_valueerror():
     x=AutoDiff(-0.5,1)
@@ -220,10 +220,10 @@ def test_log_valueerror():
 
 # Testing __sqrt__
 def test_sqrt():
-    x = AutoDiff (0,1,'x')
+    x = AutoDiff (0,1)
     y = x.sqrt()
     assert y.value == np.sqrt(0.5)
-    assert y.der == -0.5 / (x**0.5)
+    assert y.derivative == -0.5 / (x**0.5)
 
 def test_sqrt_valueerror():
     x=AutoDiff(-0.5,1)

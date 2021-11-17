@@ -1,7 +1,7 @@
 from AD.ADforward import AutoDiff
 import numpy as np
 import pytest
-
+import math
 ## Testing all of the inputs
 
 def test_invalid_derivative():
@@ -159,7 +159,7 @@ def test_pow():
     y=AutoDiff(3, 3) 
     z=x**y
     assert z.value==8
-    assert z.derivative== 8*(3*np.log(2)+8*3/2)
+    assert z.derivative== 8*(3*math.log(2)+8*3/2) #use np.log when doing vector
 
 def test_pow_zero():
     x=AutoDiff(0,1)
@@ -210,7 +210,7 @@ def test_exp():
 def test_log():
     x = AutoDiff(0.5, 1)
     y = x.log()
-    assert y.value == np.log(0.5)
+    assert y.value == math.log(0.5)
     assert y.derivative == 1 / 0.5
 
 def test_log_valueerror():

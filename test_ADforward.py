@@ -231,3 +231,7 @@ def test_sqrt_valueerror():
     with pytest.raises(ValueError):
         y=x.sqrt()
 
+def test_sqrt_zero():
+    x=AutoDiff(0,1)
+    with pytest.raises(ZeroDivisionError):
+        y=x.sqrt()

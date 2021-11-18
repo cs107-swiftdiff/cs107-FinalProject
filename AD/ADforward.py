@@ -1,6 +1,5 @@
-import itertools
+
 import numpy as np
-import math
 
 class AutoDiff():
     def __init__(self, value, derivative=1):

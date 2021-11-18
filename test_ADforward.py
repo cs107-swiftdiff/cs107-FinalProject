@@ -1,7 +1,6 @@
 from AD.ADforward import AutoDiff
 import numpy as np
 import pytest
-import math
 ## Testing all of the inputs
 
 def test_invalid_derivative():

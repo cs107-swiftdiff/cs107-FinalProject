@@ -76,6 +76,12 @@ Install dependencies:
 ```
 conda install numpy
 ```
+Copy ADforward.py which in AD file into current working directory
+
+In the script, import AutoDiff
+```
+from ADforward import AutoDiff
+```
 Define 1-D Scalar Variable:
 ```
 # x = a, in 1-D
@@ -94,7 +100,7 @@ Find value and 1-D Jacobian (derivative):
 # 1-D Jacobian is derivative - need to use .derivative
 >>> f.derivative
 ```
-Demo: R1 -> R2
+Demo: R1 -> R1
 Consider the function: $f(x) = 2 x^{4}$ at $x = 2$
 ```
 #define variable
@@ -120,7 +126,8 @@ python /UI/textUI.py
 ```
 From here, a GUI or Text UI will appear, where users can input functions, select methodologies (forward mode, reverse mode, etc.), set parameters, and visualize outputs. 
 
-## Importing the Package into Existing Code
+## 
+ing the Package into Existing Code
 ```
 import BestorgAD
 ```

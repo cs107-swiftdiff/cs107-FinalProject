@@ -202,7 +202,6 @@ Important attributes:
 
 External dependencies:
 * numpy
-* itertools
 * (for testing) pytest
 
 Elementary functions

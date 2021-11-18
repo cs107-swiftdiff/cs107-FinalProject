@@ -166,7 +166,9 @@ cs107-FinalProject/
 * **Statistical analysis module** - analyzes performance across different instances of vairous AD algorithms
 
 ### Test Suite Environment:
-We use pytest to test the performance and coverage of our code. Using pytest before integrating new changes will ensure that new changes are only merged once they pass the tests/break the code. The test suite is in the main directory, within test_ADforward.py and will contain several tests for the AD software. 
+We use pytest to test the performance and coverage of our code. Using pytest before integrating new changes will ensure that new changes are only merged once they pass the tests/break the code. The test suite is in the main directory, within test_ADforward.py and will contain several tests for the AD software. Our test suite can be run by executing the following in the CLI:
+1. ```pip install pytest-cov```
+2. ```pytest --cov=AD  test_ADforward.py```
 
 Below is a screenshot of our tested ADforward.py:
 
@@ -185,7 +187,7 @@ We will distribute our package via PyPI and create a landing page with detailed 
 ### Current forward-mode AD implementation:
 
 Core data structures:
-* class AutoDiff(self, derivative)
+* NA for forward-mode implementation
 
 Core classes:
 * class AutoDiff(self, derivative)

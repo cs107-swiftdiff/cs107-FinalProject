@@ -75,12 +75,11 @@ git clone https://github.com/cs107-bestorg/cs107-FinalProject
 Install dependencies:
 ```
 conda install numpy
-conda install math
 ```
 Define 1-D Scalar Variable:
 ```
 # x = a, in 1-D
->>> x = AD(a,1)
+>>> x = AutoDiff(a,1)
 ```
 Define function:
 ```
@@ -89,26 +88,25 @@ Define function:
 Find value and 1-D Jacobian (derivative):
 ```
 # value
->>> f.val
+>>> f.value
 
 # Jacobian
-# 1-D Jacobian is derivative - need to use .der
-# Use .jac in nD situations
->>> f.der
+# 1-D Jacobian is derivative - need to use .derivative
+>>> f.derivative
 ```
 Demo: R1 -> R2
-Consider the function: $f(x)=2 x^{3}$ at $x=4$
+Consider the function: $f(x) = 2 x^{4}$ at $x = 2$
 ```
 #define variable
->>> x=AD(4,1)
+>>> x = AutoDiff(2,1)
 #define function
->>> f=2*x**3
+>>> f = 2*x**4
 #value
->>> f.val
-128
+>>> f.value
+32
 #Jacobian
->>> f.der
-96
+>>> f.derivative
+48
 ```
 
 ## Interacting with the GUI / Text UI
@@ -157,9 +155,7 @@ cs107-FinalProject/
 ├── setup.py
 ├── LICENSE
 ├── README.md
-├── requirements.txt
-├──.travis.yml
-└──.codecov.yml
+└── requirements.txt
 ```
 
 ## Modules:
@@ -170,12 +166,11 @@ cs107-FinalProject/
 * **Statistical analysis module** - analyzes performance across different instances of vairous AD algorithms
 
 ### Test Suite Environment:
-We will use the integration tool Travis-CI that is linked to our project to automatically test changes before integrating
-them into our proejct. This will ensure that new changes are only merged once they pass the tests/break the code.
-The test suite is in the module tests, within test_ADforward.py and will contain several tests for the AD software.
+We use pytest to test the performance and coverage of our code. Using pytest before integrating new changes will ensure that new changes are only merged once they pass the tests/break the code. The test suite is in the main directory, within test_ADforward.py and will contain several tests for the AD software. 
 
-We will also use CodeCov to provide coverage reports of the tests we have performed; to be more specific we will have percentage
-reports of our code that were successful. 
+Below is a screenshot of our tested ADforward.py:
+
+![IMG_3340](https://user-images.githubusercontent.com/85530513/142346583-63fc0b1d-7c7d-46d3-8fe7-2e1754e32e7e.jpeg)
 
 ### Distribution Plan:
 We will distribute our package via PyPI and create a landing page with detailed documentation and download options.
@@ -205,8 +200,25 @@ External dependencies:
 
 Elementary functions
 * BestorgAD implements elementary functions as AutoDiff object methods according to the rules of trignometric differentiation.
+  * ```__add__```
+  * ```__radd__```
+  * ```__sub__```
+  * ```__rsub__```
+  * ```__mul__```
+  * ```__rmul__```
+  * ```__truediv__```
+  * ```__rtruediv__```
+  * ```__neg__```
+  * ```__pow__```
+  * ```sin```
+  * ```cos```
+  * ```tan```
+  * ```exp```
+  * ```log```
+  * ```sqrt```
 
-BestorgAD relies on tuples, lists, dictionaries, ndarray, and trees as core basic data structures. BestorgAD custom classes will serve to facilitate the flow of data within the package.
+## To Implement
+We have not yet implemented vector functionality for BestorgAD. In order to accomodate more complex functions, multiple functions, and multiple inputs, we will use the following datastructures: tuples, lists, dictionaries, ndarray, and trees as core basic data structures. BestorgAD custom classes will serve to facilitate the flow of data within the package.
 Some examples:
 * tuples: (value of function,its derivative) may change in the future
 * Lists: store intermediate trace values.
@@ -241,9 +253,9 @@ Some examples:
     * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
       * ```__add__()``` - e.g. ComplexNumber(self.real + other.real, self.imaginary + other.imaginary) 
-      * ```__subtract__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
-      * ```__multiply__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
-      * ```__divide__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
+      * ```__sub__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
+      * ```__mul__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
+      * ```__truediv__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
       * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.) 
         * e.g. ```__sin__()``` - e.g. sin(self.real) * cosh(self.imaginary) + i cos(self.real) * sinh(self.imaginary))
 
@@ -261,9 +273,9 @@ Some examples:
     * ```elem_derive()``` - derives the symbolic derivative of the elementary operation and outputs into a newly initiated instance of class elementaryDerivative()
     * Overloaded dunder methods to deal with dual numbers:
       * ```__add__()``` - e.g. ComplexNumber(self.real + other.real, self.imaginary + other.imaginary) 
-      * ```__subtract__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
-      * ```__multiply__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
-      * ```__divide__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
+      * ```__sub__()``` - e.g. ComplexNumber(self.real - other.real, self.imaginary - other.imaginary) 
+      * ```__mul__()``` - e.g. ComplexNumber(self.real * other.real - self.imaginary * other.imaginary, self.real * other.imaginary + other.real * self.imaginary) 
+      * ```__truediv__()``` - e.g. ComplexNumber((self.real * other.real + self.imaginary * other.imaginary) / (other.real^2 + other.imaginary^2), (self.imaginary * other.real + self.real * other.imaginary) / (other.real^2 + other.imaginary^2)) 
       * Other elementary functions TBD (sin, cos, tan, cot, sqrt, exp, etc.) 
         * e.g. ```__sin__()``` - e.g. sin(self.real) * cosh(self.imaginary) + i cos(self.real) * sinh(self.imaginary))
 
@@ -300,9 +312,14 @@ This class will inherit attributes and methods from an external GUI package ([Py
 BestorgAD uses the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), 
 a copyleft license that makes the complete source code of licensed works and modifications available. This license allows others to copy, distribute, and fork BestorgAD given the license section remains unchanged.
 
-
 # Extension
 * Experiments with Codex to generate novel AD methods - translating various concepts in AD from natural language into code through OpenAI's Codex
+
+### Proposal:
+
+Codex is a powerful code-generation tool developed by OpenAI as a fine-tuned implementation of their flagship natural language model, GPT3. Integrated into emerging applications and existing development environments, such as Github Copilot, Codex has shown massive potential to revolutionize the software development process through eliminating repetitive work and increasing efficiency.
+
+We will use Codex to generate different implementations of autodifferentiation based on natural language prompts. We will evaluate Codex's performance using our test suite on reverse-pass and reverse-mode implementations. Throughout this process, we will examine the impact of different natural language prompts and various model parameters (temperature, top P, frequency penalty, presence penalty, engine type (davinci-codex, cushman-codex), etc.) on the performance of the generated code (measured in terms of precision, speed, coverage, accuracy, etc.). Beyond reverse-mode implementations, we will explore novel approaches to implementing AD using creative Codex prompts.
 
 ## Other Potential Extensions (TBD as project progresses)
 * Statistics Module - aggregates cost, efficiency, and error statistics across multiple cycles of AD using various methods

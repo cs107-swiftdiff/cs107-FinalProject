@@ -143,7 +143,7 @@ cs107-FinalProject/
 │   ├── milestone1.md
 |   └── milestone2_progress
 |   └── milestone2.md
-├── src
+├── AD
 │   ├── __init__.py
 |   ├── ADmain.py
 |   ├── ADforward.py
@@ -153,8 +153,7 @@ cs107-FinalProject/
 ├── UI
 │   ├── GUI.py
 |   └── textUI.py
-├── tests
-│   ├── test_ADforward.py
+├── test_ADforward.py
 ├── setup.py
 ├── LICENSE
 ├── README.md

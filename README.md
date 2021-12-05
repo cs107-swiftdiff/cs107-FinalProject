@@ -5,12 +5,6 @@ Final project repo
 ### Li Sun
 ### Alice Cai
 
-# TravisCI badge
-[![Build Status](https://app.travis-ci.com/cs107-bestorg/cs107-FinalProject.svg?token=wYx7s9bxA4ZPrh8oGcQf&branch=main)](https://app.travis-ci.com/github/cs107-bestorg/cs107-FinalProject)
-
-# Codecov badge
-[![codecov](https://codecov.io/gh/cs107-bestorg/cs107-FinalProject/branch/m2/graph/badge.svg?token=R3JI39UEGO)](https://codecov.io/gh/cs107-bestorg/cs107-FinalProject)
-
 ## Broader Impact
  
 As we worked on this project throughout the semester - we found the development of our project to be highly complex and pragmatic; as we explored and researched the fundamentals of Automatic Differentiation to create our software, we constantly thought to ourselves, wouldn't it be nice if there was a program that did this for us? This is precisely why we created our software - in order to provide a quick, easy, and automated method to calculate complex derivatives, and take advantage of the power of machines. However - this is the very foundation to why softwares like this may need to be more careful and purposeful in its applications. Programming a software to automatically perform differentiation is powerful - yet can take away from learning and education. Students like us - building this software - take a lot away from creating this software; we’ve done heavy research, and manually programmed all the code itself. For future students, who may utilize our software, may not even understand the fundamentals of derivatives, differentiation, etc. Instead of learning the true dynamics of differentiation, they can simply use our software to retrieve derivatives efficiently. Therefore - we highlight that our software be used as a tool, not a shortcut. We believe that our software should be utilized with respect and academic honor.

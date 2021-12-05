@@ -1,5 +1,5 @@
-#import sys
-#sys.path.append('AutoDiff/src/autodiff')
+import sys
+sys.path.append('/cs107-FinalProject/AD')
 
 import numpy as np
 

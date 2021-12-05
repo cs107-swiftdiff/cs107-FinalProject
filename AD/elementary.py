@@ -3,7 +3,7 @@
 # import dependencies
 
 import numpy as np
-from Dual import Dual
+from .Dual import Dual
 
 def exp(var):
 

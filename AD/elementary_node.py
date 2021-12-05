@@ -1,5 +1,5 @@
 import numpy as np
-import math
+
 from Node import Node #need change
 
 def exp(var):

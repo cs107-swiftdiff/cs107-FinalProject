@@ -1,7 +1,6 @@
-from CURRENT.AD_reverse import * 
-from CURRENT.AD_forward import * 
-from CURRENT.Node import *
-from CURRENT.elementary_node import *
+from AD.AD_reverse import * 
+from AD.Node import * 
+from AD.elementary_node import * 
 
 """
 REVERSE MODE
@@ -28,10 +27,9 @@ while demo_state == "R":
         \n*Get function value
         \n*Get function jacobian
         \n*Get multiple function jacobians
-        \n(press ENTER to continue to STEP #1)
         """)
         step1 = None
-        while step1 != "\n":
+        while step1 != "":
             step1 = input("(press ENTER to continue to STEP #1)")
 
         print("""
@@ -42,8 +40,10 @@ while demo_state == "R":
         \nx1 = Node(1)
         \ny1 = Node(2)
         \nz1 = Node(6)
-        \n(press ENTER to continue to STEP #2)
         """)
+        step2 = None
+        while step2 != "":
+            step2 = input("(press ENTER to continue to STEP #2)")
 
         x1 = Node(1)
         y1 = Node(2)
@@ -58,8 +58,10 @@ while demo_state == "R":
         \nInput your function including the variables you defined above.
         \nExample function:
         \ndef f1(x1,y1,z1): return (5 * x1 - 2 * y1 + 3 * z1 + 10)
-        \n(press ENTER to continue to STEP #3)
         """)
+        step3 = None
+        while step3 != "":
+            step3 = input("(press ENTER to continue to STEP #3)")
 
         def f1(x1,y1,z1): return (5 * x1 - 2 * y1 + 3 * z1 + 10)
 
@@ -70,8 +72,10 @@ while demo_state == "R":
         \nCreate an instance of your function as a Forward AD class.
         \nExample usage:
         \ntest = Reverse(f1,[x,y,z])
-        \n(press ENTER to continue to METHOD #1)
         """)
+        method1 = None
+        while method1 != "":
+            method1 = input("(press ENTER to continue to METHOD #1)")
         
         test = Reverse(f1,[x1,y1,z1])
         
@@ -85,7 +89,9 @@ while demo_state == "R":
         # funcval = fwdtest.get_value()
 
         print(">>>test.get_value()\n", eval("test.get_value()"))
-        print("\n(press ENTER to continue to METHOD #2)")
+        method2 = None
+        while method2 != "":
+            method2 = input("(press ENTER to continue to METHOD #2)")
 
         print("""
         METHOD #2:
@@ -95,7 +101,9 @@ while demo_state == "R":
         # funcjac = fwdtest.get_jacobian()
 
         print(">>>test.get_jacobian()\n", eval("test.get_jacobian()"))
-        print("\n(press ENTER to continue to METHOD #3)")
+        method3 = None
+        while method3 != "":
+            method3 = input("(press ENTER to continue to METHOD #3)")
         
         def f2(x1,y1,z1): return (x1 ** (logistic(y1, 1, 7, 8) - exp(sin(y1) + cos(z1))))
         def f3(x1,y1,z1): return (log_base(tanh(y1), 3) - ln(tan(sqrt(x1))))
@@ -111,7 +119,9 @@ while demo_state == "R":
         """)
 
         print(">>>test_multiple.get_jacobian()\n", eval("test_multiple.get_jacobian()"))
-        print("\n(press ENTER to continue)")
+        finish = None
+        while finish != "":
+            finish = input("(press ENTER to finish)")
 
         print("""
         CONGRATULATIONS! YOU HAVE COMPLETED THE AD REVERSE MODE DEMO!

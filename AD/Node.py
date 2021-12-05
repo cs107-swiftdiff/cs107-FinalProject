@@ -496,7 +496,7 @@ class Node:
             return False
 
     def __le__(self, other):
-                """
+        """
         Decides if self is less than or equal to a Node object, float, or int
         When compares to float or int, return False all the time   
 
@@ -548,7 +548,7 @@ class Node:
             return False
 
     def __gt__(self,other):
-                """
+        """
         Decides if self is greater than a Node object, float, or int
         When compares to float or int, return False all the time    
 
@@ -652,7 +652,7 @@ class Node:
             return False
 
     def __eq__(self, other):
-              """
+        """
         Decides if self is equal to a Node object, float, or int
         When compares to float or int, return False all the time 
 
@@ -705,7 +705,7 @@ class Node:
             return False
         
     def __ne__(self, other):
-            """
+        """
         Decides if self is not equal to a Node object, float, or int
               
         INPUTS:

@@ -141,7 +141,7 @@ python demoReverse.py
 # Software Organization
 
 ## Directory structure:
-############ Replace with tree from package
+
 ```
 BestorgAD/
 ├── AD
@@ -161,8 +161,8 @@ BestorgAD/
 │   │   └── elementary_node.cpython-37.pyc
 │   ├── elementary.py
 │   └── elementary_node.py
-├── Demo.py
-├── Demo_reverse.py
+├── demoAD.py
+├── demoReverse.py
 ├── LICENSE
 ├── README.md
 ├── docs
@@ -177,23 +177,13 @@ BestorgAD/
 │   ├── ADforward.py
 │   └── test_ADforward.py
 ├── requirements.txt
-├── src
-│   ├── ADforward.py
-│   └── test_ADforward.py
 ├── test_AD_forward.py
 ├── test_AD_reverse.py
 ├── test_ADforward.py
 ├── test_Node.py
 ├── test_dual.py
 ├── test_elementary.py
-├── test_elementary_node.py
-└── tests
-    ├── test_AD_forward.py
-    ├── test_AD_reverse.py
-    ├── test_Node.py
-    ├── test_dual.py
-    ├── test_elementary.py
-    └── test_elementary_node.py
+└── test_elementary_node.py
 ```
 
 ## Modules:

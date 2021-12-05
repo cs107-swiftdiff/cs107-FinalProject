@@ -1,6 +1,6 @@
 import numpy as np
 
-from Node import Node #need change
+from .Node import Node #need change
 
 def exp(var):
     """
@@ -207,7 +207,7 @@ def tanh(var):
     except AttributeError:        
         return np.tanh(var)
         
-def ln(var,base = math.e):
+def ln(var):
     """
     Calculates the log of the input
 
@@ -279,7 +279,7 @@ def log_base(var,base):
         
 def logistic(var, L=1, k=1, x0=0):
 
-        """
+    """
     Calculates the log of the input in a specified base
 
     INPUTS:

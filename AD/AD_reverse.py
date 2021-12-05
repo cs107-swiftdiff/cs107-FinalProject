@@ -1,8 +1,9 @@
 
 # base class for autodiff
 import numpy as np
-from Dual import *
-from elementary import *
+from .Node import *
+from .elementary import *
+
 
 class AutoDiff():
     def __init__(self, f):

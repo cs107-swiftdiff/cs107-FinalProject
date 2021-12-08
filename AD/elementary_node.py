@@ -1,6 +1,6 @@
 import numpy as np
 
-from .Node import Node #need change
+from Node import Node
 
 def exp(var):
     """

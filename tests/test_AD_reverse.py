@@ -1,6 +1,9 @@
-from AD.Node import *
-from AD.AD_reverse import *
-from AD.elementary_node import *
+import sys
+sys.path.append('../AD')     
+sys.path.append('AD')
+from Node import *
+from AD_reverse import *
+from elementary_node import *
 def test_get_value():
     x1 = Node(1)
     y1 = Node(2)

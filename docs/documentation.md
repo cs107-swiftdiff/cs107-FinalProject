@@ -243,7 +243,7 @@ class Node:
 * self.children - children of the node
 
 ## Elementary functions
-* BestorgAD overloads elementary functions to accomodate Dual objects:
+* BestorgAD overloads elementary functions to accomodate Dual objects and Node objects:
   * ```exp``` - calculates e to the power of the input
   * ```sin``` - calculates the sine of the input
   * ```cos``` - calculates cosine of the input
@@ -252,7 +252,7 @@ class Node:
   * ```cosh``` - calculates the hyperbolic cosine of the input
   * ```tanh``` - calculates the hyperbolic tangent of the input
   * ```ln``` - calculates the log of the input
-  * ```log_base``` - calculates hte log of the input in a specified base
+  * ```log_base``` - calculates the log of the input in a specified base
   * ```logistic``` - calculates the logistic function including the input
   * ```sqrt``` - calculates the square root of the input
 

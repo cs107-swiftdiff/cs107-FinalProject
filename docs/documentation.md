@@ -342,6 +342,28 @@ Our reverse mode extension allows users to work with reverse mode AD in a simila
 * ```get_value``` - gets the value of the function
 * ```get_jacobian``` - gets the Jacobian (derivative) of the function
 
+But be careful that there are some differences in initializing. To use reverse mode:
+
+First, define variables:
+```
+x1 = Node(1)
+y1 = Node(2)
+```
+
+Second, define functions:
+```
+def f1(x1,y1): return (x1+y1)
+```
+Third, create an instance of your function as a Reverse AD class:
+```
+test = Reverse(f1,[x,y,z])
+```
+Forth, use get_value(), and get_jacobian() function to get value and Jacobian
+```
+test.get_value()
+test.get_jacobian()
+```
+
 ## Future Steps
 Autodifferentiation has applications across all industries, including physics, biology, genetics, applied mathematics, optimization, statistics / machine learning, health science, and more.
 We believe that our software, if implemented correctly -  can be beneficial to all industries beyond software engineering. 

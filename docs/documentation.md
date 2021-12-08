@@ -63,7 +63,7 @@ activate vir_name
 ```
 Install the package:
 ```
-conda install -n BestorgAD
+pip install -n BestorgAD
 ```
 Users can also clone this repo:
 ```
@@ -71,7 +71,7 @@ git clone https://github.com/cs107-bestorg/cs107-FinalProject
 ```
 Install dependencies:
 ```
-conda install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Package Import

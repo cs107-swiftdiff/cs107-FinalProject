@@ -147,7 +147,6 @@ BestorgAD/
 ├── AD
 │   ├── AD_forward.py
 │   ├── AD_reverse.py
-│   ├── ADforward.py
 │   ├── Dual.py
 │   ├── Node.py
 │   ├── __init__.py
@@ -179,7 +178,6 @@ BestorgAD/
 ├── tests
     ├── test_AD_forward.py
     ├── test_AD_reverse.py
-    ├── test_ADforward.py
     ├── test_Node.py
     ├── test_dual.py
     ├── test_elementary.py

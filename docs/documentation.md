@@ -329,6 +329,17 @@ class Node:
 Checks are implemented throughout these classes to ensure that inputs are valid. Elementary functions are either overloaded or handled via external packages.
 
 # Extension - Reverse Mode AD
+## Initial Plan
+[From Milestone 2]
+Experiments with Codex to generate novel AD methods - translating various concepts in AD from natural language into code through OpenAI's Codex.
+
+Codex is a powerful code-generation tool developed by OpenAI as a fine-tuned implementation of their flagship natural language model, GPT3. Integrated into emerging applications and existing development environments, such as Github Copilot, Codex has shown massive potential to revolutionize the software development process through eliminating repetitive work and increasing efficiency.
+
+We will use Codex to generate different implementations of autodifferentiation based on natural language prompts. We will evaluate Codex's performance using our test suite on reverse-pass and reverse-mode implementations. Throughout this process, we will examine the impact of different natural language prompts and various model parameters (temperature, top P, frequency penalty, presence penalty, engine type (davinci-codex, cushman-codex), etc.) on the performance of the generated code (measured in terms of precision, speed, coverage, accuracy, etc.). Beyond reverse-mode implementations, we will explore novel approaches to implementing AD using creative Codex prompts.
+
+However, we didn't use Codex because it generates the code for us, but we believe that we need to write our own code for this project. Thus, we decided to implement reverse mode for autodifferentiation.
+
+## New Extension
 Reverse mode automatic differentiation builds on the forward mode computational graph by enabling reverse traversal to compute gradients. Reverse mode stores values for all variables in nodes, and computes the gradient in one pass, which is more computationally efficient than forward mode AD.
 
 Our reverse mode extension allows users to work with reverse mode AD in a similar fashion to forward mode AD. Users can call the following methods when working with Reverse AutoDiff class objects:

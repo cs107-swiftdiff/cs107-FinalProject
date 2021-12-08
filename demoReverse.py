@@ -1,6 +1,9 @@
-from AD.AD_reverse import * 
-from AD.Node import * 
-from AD.elementary_node import * 
+import sys
+sys.path.append('../AD')     
+sys.path.append('AD')
+from AD_reverse import * 
+from Node import * 
+from elementary_node import * 
 
 """
 REVERSE MODE

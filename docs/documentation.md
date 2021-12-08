@@ -215,6 +215,7 @@ Bestorg AD is available on [PyPI](https://pypi.org/project/BestorgAD/) and [Gith
 * np.array
 * float
 * int
+* tuple
 
 ## Core classes:
 * class AutoDiff(function)

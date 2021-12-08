@@ -75,15 +75,16 @@ conda install -r requirements.txt
 ```
 
 ## Package Import
-In the script, import AD, Dual, and elementary classes and methods
+In the script, import AD_Forward, Dual, and elementary classes and methods
 ```
-from AD import * 
-from Dual import * 
-from elementary import * 
+from AD.AD_Forward import * 
+from AD.Dual import * 
+from AD.elementary import * 
 ```
-Optionally, import Node and elementary_node classes and methods for reverse mode usage:
+Optionally, import AD_Reverse, Node and elementary_node classes and methods for reverse mode usage:
 ```
-from Node import *
+from AD.AD_Reverse import *
+from AD.Node import *
 from elementary_node import *
 ```
 
@@ -118,6 +119,9 @@ fwdtest.get_jacobian()
 ```
 Get the jacobians of multiple functions:
 ```
+f2 = x1 ** (logistic(y1, 1, 7, 8) - exp(sin(y1) + cos(z1)))
+f3 = log_base(tanh(y1), 3) - ln(tan(sqrt(x1)))
+twdtest_multiple=Forward([f1,f2,f3])
 fwdtest_multiple.get_jacobian()
 ```
 

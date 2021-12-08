@@ -66,8 +66,10 @@ class Node:
         >>> y.derivative=1
         >>>y.value
         >>>3
-        >>>x1.der()=2
-        >>>x2.der()=1
+        >>>x1.der()
+        >>>2
+        >>>x2.der()
+        >>>1
 
         """
         node = Node(0)
@@ -98,8 +100,10 @@ class Node:
         >>>y.derivative=1
         >>>y.value
         >>>3
-        >>>x1.der()=1
-        >>>x2.der()=1    
+        >>>x1.der()
+        >>>1
+        >>>x2.der()
+        >>>1    
 
         int + Node:
         >>> y=3 + x1
@@ -165,8 +169,10 @@ class Node:
         >>>y.derivative=1
         >>>y.value
         >>>`
-        >>>x1.der()=-1
-        >>>x2.der()=1  
+        >>>x1.der()
+        >>>-1
+        >>>x2.der()
+        >>>1  
 
       
         int - Node:

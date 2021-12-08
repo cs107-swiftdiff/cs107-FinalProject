@@ -198,7 +198,7 @@ We use pytest to test the performance and coverage of our code. Using pytest bef
 
 Below is a screenshot of our test coverage:
 
-<img src="https://github.com/cs107-bestorg/cs107-FinalProject/blob/main/docs/test_coverage.png" alt="test_coverage">
+![test_coverage](test_coverage.png?raw=true)
 
 ### Distribution:
 OMIT(We will distribute our package via PyPI and create a landing page with detailed documentation and download options.)

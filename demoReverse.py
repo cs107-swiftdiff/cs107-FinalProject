@@ -118,7 +118,7 @@ while demo_state == "R":
         \nExample usage:
         \ndef f2(x1,y1,z1): return (x1 ** (logistic(y1, 1, 7, 8) - exp(sin(y1) + cos(z1))))
         \ndef f3(x1,y1,z1): return (log_base(tanh(y1), 3) - ln(tan(sqrt(x1))))
-        \nfwdtest_multiple = Forward([f1, f2, f3])
+        \nfwdtest_multiple = Reverse([f1, f2, f3])
         """)
 
         print(">>>test_multiple.get_jacobian()\n", eval("test_multiple.get_jacobian()"))

@@ -194,7 +194,7 @@ BestorgAD/
 ### Test Suite Environment:
 We use pytest to test the performance and coverage of our code. Using pytest before integrating new changes will ensure that new changes are only merged once they pass the tests/break the code. The test suite is in the main directory, within test_ADforward.py and will contain several tests for the AD software. Our test suite can be run by executing the following in the CLI:
 1. ```pip install pytest-cov```
-2. ```pytest --cov=AD  test_ADforward.py```
+2. ```pytest --cov=AD```
 
 Below is a screenshot of our tested ADforward.py:
 

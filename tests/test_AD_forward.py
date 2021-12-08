@@ -1,8 +1,11 @@
+import sys
+sys.path.append('../AD')     
+sys.path.append('AD')
 import numpy as np
 
-from AD.Dual import *
-from AD.AD_forward import *
-from AD.elementary import *
+from Dual import *
+from AD_forward import *
+from elementary import *
 
 def test_get_value():
         x1 = Dual(value = 1, derivative=1, index = 0, total = 3)

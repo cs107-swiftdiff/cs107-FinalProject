@@ -72,7 +72,7 @@ while demo_state == "R":
 
         print("""
         STEP #3
-        \nCreate an instance of your function as a Forward AD class.
+        \nCreate an instance of your function as a Reverse AD class.
         \nExample usage:
         \ntest = Reverse(f1,[x,y,z])
         """)

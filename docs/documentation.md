@@ -291,7 +291,7 @@ class Node:
     * ```__eq__``` - decides if a Dual object is equal to something
     * ```__ne__``` - decides if a Dual object is not equal to something
 
-### ```Node(value, derivative, **kwargs)```
+### ```Node(value)```
   * Inputs:
     * value
   * Attributes:

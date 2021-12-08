@@ -1,9 +1,9 @@
-#import sys
-#sys.path.append('AutoDiff/src/autodiff')
-
+import sys
+sys.path.append('../AD')     
+sys.path.append('AD')
 import pytest
-from AD.Node import *
-from AD.elementary_node import *
+from Node import *
+from elementary_node import *
 import numpy as np
 
 def test_exp_node():

@@ -356,7 +356,7 @@ def f1(x1,y1): return (x1+y1)
 ```
 Third, create an instance of your function as a Reverse AD class:
 ```
-test = Reverse(f1,[x,y,z])
+test = Reverse(f1,[x1,y1])
 ```
 Forth, use get_value(), and get_jacobian() function to get value and Jacobian
 ```

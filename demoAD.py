@@ -1,7 +1,9 @@
+import sys
+sys.path.append('../AD')     
+sys.path.append('AD')
 from AD_forward import * 
-from AD_reverse import * 
-from .Dual import * 
-from .elementary import * 
+from Dual import * 
+from elementary import * 
 
 """
 FORWARD MODE

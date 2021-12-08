@@ -2,8 +2,8 @@ import sys
 sys.path.append('../AD')     
 sys.path.append('AD')
 import pytest
-from AD.Dual import *
-from AD.elementary import *
+from Dual import *
+from elementary import *
 import numpy as np
 
 def test_exp_dual():

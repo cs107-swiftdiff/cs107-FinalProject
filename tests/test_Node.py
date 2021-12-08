@@ -1,6 +1,9 @@
+import sys
+sys.path.append('../AD')     
+sys.path.append('AD')
 import pytest
 
-from AD.Node import Node #change
+from Node import Node #change
 import numpy as np
 
 # Testing __add__

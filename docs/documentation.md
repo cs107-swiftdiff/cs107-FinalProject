@@ -196,9 +196,9 @@ We use pytest to test the performance and coverage of our code. Using pytest bef
 1. ```pip install pytest-cov```
 2. ```pytest --cov=AD```
 
-Below is a screenshot of our tested ADforward.py:
+Below is a screenshot of our test coverage:
 
-![IMG_3340](https://user-images.githubusercontent.com/85530513/142346583-63fc0b1d-7c7d-46d3-8fe7-2e1754e32e7e.jpeg)
+<img src="https://github.com/cs107-bestorg/cs107-FinalProject/blob/main/docs/test_coverage.png" alt="test_coverage">
 
 ### Distribution:
 OMIT(We will distribute our package via PyPI and create a landing page with detailed documentation and download options.)

@@ -374,7 +374,14 @@ Codex is a powerful code-generation tool developed by OpenAI as a fine-tuned imp
 However, we didn't use Codex because it generates the code for us, but we believe that we need to write our own code for this project. Thus, we decided to implement reverse mode for autodifferentiation.
 
 ## New Extension
+
 Reverse mode automatic differentiation builds on the forward mode computational graph by enabling reverse traversal to compute gradients. Reverse mode stores values for all variables in nodes, and computes the gradient in one pass, which is more computationally efficient than forward mode AD.
+
+Forward mode and reverse mode have relative advantages and disadvantages in different types of siutations. While reverse mode has a significantly smaller arithmetic count than forward mode, it also stores the full computational graph in memory. In contrast, forward mode is more efficient when the number of variables is small, but it requires less memory as it does not need to store the full graph. By implementing reverse mode, users can select the appropriate solution for their application. For applications where the number of variables is small, forward mode is more efficient, whiel for large numbers of variables, reverse mode is more efficient.
+
+Implementation-wise, reverse mode is a two-pass process that works by first running a forward pass through the the elementary functions and storing all partial derivatives without evaluating the chain rule. Then, reverse mode traverses the graph in reverse order and multiplies the current partial derivative by the derivative of the next node. The partial derivatives derived from reverse mode reflect the sensitivity of the output with respect to the intermediate variable v, as follows:
+
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}v_{j-m}=\frac{\partial{f_i}}{\partial{v_{j-m}}}">
 
 Our reverse mode extension allows users to work with reverse mode AD in a similar fashion to forward mode AD. Users can call the following methods when working with Reverse AutoDiff class objects:
 * ```get_value``` - gets the value of the function

@@ -75,7 +75,7 @@ activate vir_name
 ```
 Install the package:
 ```
-pip install -n SwiftDiff
+pip install swiftdiff==0.0.1
 ```
 Users can also clone this repo:
 ```
@@ -89,13 +89,13 @@ pip install -r requirements.txt
 ## Package Import
 In the script, import AD_Forward, Dual, and elementary classes and methods
 ```
-from AD.AD_Forward import * 
+from AD.AD_forward import * 
 from AD.Dual import * 
 from AD.elementary import * 
 ```
 Optionally, import AD_Reverse, Node and elementary_node classes and methods for reverse mode usage:
 ```
-from AD.AD_Reverse import *
+from AD.AD_reverse import *
 from AD.Node import *
 from elementary_node import *
 ```

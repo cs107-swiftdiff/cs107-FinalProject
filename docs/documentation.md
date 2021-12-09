@@ -325,7 +325,27 @@ class Node:
     * ```__ge__``` - decides if a Node object is greater than or equal to something
     * ```__eq__``` - decides if a Node object is equal to something
     * ```__ne__``` - decides if a Node object is not equal to something
+    
+### ```Forward(f)```
+  * Inputs:
+    * f
+  * Attributes:
+    * ```self.f``` - functions from input
+  * Methods: 
+    * ```get_value``` - calculates the value
+    * ```get_jacobian``` - calculates the Jacobian
 
+### ```Reverse(f,variables)```
+  * Inputs:
+    * f
+    * variables
+  * Attributes:
+    * ```self.f``` - functions from input
+    * ```self.variables``` - variables in the functions
+  * Methods: 
+    * ```get_value``` - calculates the value
+    * ```get_jacobian``` - calculates the Jacobian
+    
 ## External dependencies: 
   * [NumPy](https://numpy.org/) - to perform mathematical operations
   * [PyPI](https://pypi.org/) - to publish the package

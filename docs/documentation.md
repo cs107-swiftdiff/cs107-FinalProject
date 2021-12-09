@@ -222,7 +222,7 @@ Bestorg AD is available on [PyPI](https://pypi.org/project/BestorgAD/) and [Gith
 ## Core classes:
 * class AutoDiff(function)
   * class Forward(function) - child of AutoDiff class
-  * class Reverse(function) - child of AutoDiff class
+  * class Reverse(function,variable) - child of AutoDiff class
 * class Dual(value, derivative, index, total)
 * class Node(value, derivative, children)
 

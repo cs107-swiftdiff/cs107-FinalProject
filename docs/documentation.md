@@ -166,20 +166,12 @@ SwiftDiff/
 │   ├── Dual.py
 │   ├── Node.py
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── AD_forward.cpython-37.pyc
-│   │   ├── AD_reverse.cpython-37.pyc
-│   │   ├── Dual.cpython-37.pyc
-│   │   ├── Node.cpython-37.pyc
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── elementary.cpython-37.pyc
-│   │   └── elementary_node.cpython-37.pyc
 │   ├── elementary.py
 │   └── elementary_node.py
-├── demoAD.py
-├── demoReverse.py
 ├── LICENSE
 ├── README.md
+├── demoAD.py
+├── demoReverse.py
 ├── docs
 │   ├── Logo.png
 │   ├── backup.md
@@ -187,18 +179,19 @@ SwiftDiff/
 │   ├── documentation.md
 │   ├── milestone1.md
 │   ├── milestone2.md
-│   └── milestone2_progress.md
+│   ├── milestone2_progress.md
+│   └── test_coverage.png
 ├── old
 │   ├── ADforward.py
 │   └── test_ADforward.py
-├── tests
+├── requirements.txt
+└── tests
     ├── test_AD_forward.py
     ├── test_AD_reverse.py
     ├── test_Node.py
     ├── test_dual.py
     ├── test_elementary.py
     └── test_elementary_node.py
-└── requirements.txt
 ```
 
 ## Modules:

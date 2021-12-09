@@ -203,13 +203,15 @@ BestorgAD/
 * **Reverse mode module** - implements reverse mode AD
 
 ### Test Suite Environment:
-We use pytest to test the performance and coverage of our code. Using pytest before integrating new changes will ensure that new changes are only merged once they pass the tests/break the code. The test suite is in the main directory, within test_ADforward.py and will contain several tests for the AD software. Our test suite can be run by executing the following in the CLI:
+We use pytest to test the performance and coverage of our code. Using pytest before integrating new changes will ensure that new changes are only merged once they pass the tests/break the code. The test suite is in the test folder, and will contain several tests for the code contained in the AD folder. Our test suite can be run by executing the following in the CLI:
 1. ```pip install pytest-cov```
 2. ```pytest --cov=AD```
 
 Below is a screenshot of our test coverage:
 
 ![test_coverage](test_coverage.png?raw=true)
+
+As you can see - all of our testing for each class was successful - they were all over 90%. This shows that our AD software is robust.
 
 ### Distribution:
 OMIT(We will distribute our package via PyPI and create a landing page with detailed documentation and download options.)

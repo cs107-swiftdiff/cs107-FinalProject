@@ -17,6 +17,15 @@ Automatic differentiation, also known as algorithmic differentiation, computatio
 
 [Symbolic differentiation (SD)](https://www.cs.utexas.edu/users/novak/asg-symdif.html) uses procedural rules to find general solutions to derivatives with respect to a variable. Instead of computing numerical approximations, SD manipulates a given input function to output a new function, ultimately producing a tree of expressions. Hoewver, SD methods suffer from computational inefficiency as derivatives can often become incredibly long and complex quickly, making the SD process slow and complicated.
 
+**Dual Number:**
+
+A dual number is made up of a real part and a dual part, which is writen as <img src="https://render.githubusercontent.com/render/math?math=\color{gray}z = a + b\epsilon">, where <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon ^2 = 0">, but <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon \ne 0">
+
+Dual number is used to represent the value and the derivative part of a variable because its special property for addition and multiplication
+
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1+z_2 = (a_1 + b_1\epsilon) + (a_2 + b_2\epsilon)=(a_1+a_2)+(b_1+b_2)\epsilon">
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1z_2 = (a_1 + b_1\epsilon)(a_2 + b_2\epsilon)=(a_1a_2)+(a_1b_1+a_2b_2)\epsilon">
+
 ## Components of Automatic Differentiation:
 
 Different from numerical differentiation and symbolic differentiation, automatic differentiation evalutes derivatives by breaking down complex functions into elementary functions to enable simple calculations intermediate values and subsequent efficient computation of the composite derivative.

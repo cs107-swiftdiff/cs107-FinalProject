@@ -242,25 +242,25 @@ Bestorg AD is available on [PyPI](https://pypi.org/project/BestorgAD/) and [Gith
 
 ## Important attributes:
 class AutoDiff:
-* self.f - function
+* ```self.f``` - function
 
 class Forward:
-* self.f - function
+* ```self.f``` - function
  
 class Reverse:
-* self.f - function
-* self.variables - variables in the function
+* ```self.f``` - function
+* ```self.variables``` - variables in the function
 
 class Dual:
-* self.value - value of the variable
-* self.derivative - derivative of the variable
-* self.index - index of the variable inside the function
-* self.total - total number of variables in the function
+* ```self.value``` - value of the variable
+* ```self.derivative``` - derivative of the variable
+* ```self.index``` - index of the variable inside the function
+* ```self.total``` - total number of variables in the function
 
 class Node:
-* self.value - value of the node
-* self.derivative - derivative of the node
-* self.children - children of the node
+* ```self.value``` - value of the node
+* ```self.derivative``` - derivative of the node
+* ```self.children``` - children of the node
 
 ## Elementary functions
 * BestorgAD overloads elementary functions to accomodate Dual objects and Node objects:
@@ -368,7 +368,8 @@ Checks are implemented throughout these classes to ensure that inputs are valid.
 
 # Extension - Reverse Mode AD
 ## Initial Plan
-[From Milestone 2]Experiments with Codex to generate novel AD methods - translating various concepts in AD from natural language into code through OpenAI's Codex.
+[From Milestone 2] Experiments with Codex to generate novel AD methods - translating various concepts in AD from natural language into code through OpenAI's Codex.
+
 Codex is a powerful code-generation tool developed by OpenAI as a fine-tuned implementation of their flagship natural language model, GPT3. Integrated into emerging applications and existing development environments, such as Github Copilot, Codex has shown massive potential to revolutionize the software development process through eliminating repetitive work and increasing efficiency.We will use Codex to generate different implementations of autodifferentiation based on natural language prompts. We will evaluate Codex's performance using our test suite on reverse-pass and reverse-mode implementations. Throughout this process, we will examine the impact of different natural language prompts and various model parameters (temperature, top P, frequency penalty, presence penalty, engine type (davinci-codex, cushman-codex), etc.) on the performance of the generated code (measured in terms of precision, speed, coverage, accuracy, etc.). Beyond reverse-mode implementations, we will explore novel approaches to implementing AD using creative Codex prompts.
 
 However, we didn't use Codex because it generates the code for us, but we believe that we need to write our own code for this project. Thus, we decided to implement reverse mode for autodifferentiation.
@@ -377,7 +378,7 @@ However, we didn't use Codex because it generates the code for us, but we believ
 
 Reverse mode automatic differentiation builds on the forward mode computational graph by enabling reverse traversal to compute gradients. Reverse mode stores values for all variables in nodes, and computes the gradient in one pass, which is more computationally efficient than forward mode AD.
 
-Forward mode and reverse mode have relative advantages and disadvantages in different types of siutations. While reverse mode has a significantly smaller arithmetic count than forward mode, it also stores the full computational graph in memory. In contrast, forward mode is more efficient when the number of variables is small, but it requires less memory as it does not need to store the full graph. By implementing reverse mode, users can select the appropriate solution for their application. For applications where the number of variables is small, forward mode is more efficient, whiel for large numbers of variables, reverse mode is more efficient.
+Forward mode and reverse mode have relative advantages and disadvantages in different types of siutations. While reverse mode has a significantly smaller arithmetic count than forward mode, it also has to store the full computational graph in memory. In contrast, forward mode is more efficient when the number of variables is small, but it becomes far more complex for large numbers of variables. Our implementation of reverse mode allows users to select the appropriate solution for their application. For applications where the number of variables is small, forward mode is more efficient, while for large numbers of variables, reverse mode is more efficient.
 
 Implementation-wise, reverse mode is a two-pass process that works by first running a forward pass through the the elementary functions and storing all partial derivatives without evaluating the chain rule. Then, reverse mode traverses the graph in reverse order and multiplies the current partial derivative by the derivative of the next node. The partial derivatives derived from reverse mode reflect the sensitivity of the output with respect to the intermediate variable v, as follows:
 

@@ -13,15 +13,18 @@ Originally conceptualized by Robert Edwin Wengert in his 1964 paper, *A simple a
 
 Automatic differentiation, also known as algorithmic differentiation, computational differentiation, auto-differentiation, or autodiff, is different from either numerical or symbolic differentiation methods.
 
-[Numerical differentiation (ND)](https://en.wikibooks.org/wiki/Introduction_to_Numerical_Methods/Numerical_Differentiation) is a class of methods that computes derivatives through computing discrete numerical approximations of the derivative. Common ND approaches include finite difference methods, which convert differential equations into a algebraically solvable system of linear equations. However, ND suffers from two main sources of inaccuracy - truncation and roundoff errors - as its precision is dependant on the step size of the derivative calculations. Furthermore there is a tradeoff in error reduction of trunction and roundoff errors, as smaller values of delta reduce truncation error but exacerbate roundoff error due to limited floating point accuracy.
+[Numerical differentiation (ND)](https://en.wikibooks.org/wiki/Introduction_to_Numerical_Methods/Numerical_Differentiation) is a class of methods that computes derivatives through computing discrete numerical approximations of the derivative. Common ND approaches include finite difference methods, which convert differential equations into an algebraically solvable system of linear equations. However, ND suffers from two main sources of inaccuracy - truncation and roundoff errors - as its precision is dependant on the step size of the derivative calculations. Furthermore there is a tradeoff in error reduction of trunction and roundoff errors, as smaller values of delta reduce truncation error but exacerbate roundoff error due to limited floating point accuracy.
 
-[Symbolic differentiation (SD)](https://www.cs.utexas.edu/users/novak/asg-symdif.html) uses procedural rules to find general solutions to derivatives with respect to a variable. Instead of computing numerical approximations, SD manipulates a given input function to output a new function, ultimately producing a tree of expressions. Hoewver, SD methods suffer from computational inefficiency as derivatives can often become incredibly long and complex quickly, making the SD process slow and complicated.
+[Symbolic differentiation (SD)](https://www.cs.utexas.edu/users/novak/asg-symdif.html) uses procedural rules to find general solutions to derivatives with respect to a variable. Instead of computing numerical approximations, SD manipulates a given input function to output a new function, ultimately producing a tree of expressions. However, SD methods suffer from computational inefficiency as derivatives can often become incredibly long and complex quickly, making the SD process slow and complicated.
+
 
 **Dual Number:**
 
+Dual numbers are utilized in our forward mode to represent the value and the derivative part of a variable because of its special property for addition and multiplication.
+
 A dual number is made up of a real part and a dual part, which is writen as <img src="https://render.githubusercontent.com/render/math?math=\color{gray}z = a + b\epsilon">, where <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon ^2 = 0">, but <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon \ne 0">
 
-Dual number is used to represent the value and the derivative part of a variable because its special property for addition and multiplication
+Here are the definitions for addition and multiplication dual numbers that we utilize for our forward mode:
 
 <img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1+z_2 = (a_1 + b_1\epsilon) + (a_2 + b_2\epsilon)=(a_1+a_2)+(b_1+b_2)\epsilon">
 <img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1z_2 = (a_1 + b_1\epsilon)(a_2 + b_2\epsilon)=(a_1a_2)+(a_1b_1+a_2b_2)\epsilon">
@@ -57,7 +60,7 @@ See the following example of a trace table and its corresponding computational g
 
 ![Computational Graph of f(x, y)](computational_graph.png?raw=true)
 
-  In reverse mode, partial derivative values are stored at each node within a graph, and the full derivative is only computed using the chain rule during the backward pass. 
+  In reverse mode, partial derivative values are stored at each node within a graph, and the full derivative is only computed using the chain rule during the backward pass. Further explanation on reverse mode is available towards the end of our documentation. 
 
   These two approaches are useful for different types of problems, with forward mode providing computational advantages in terms of storage and reverse mode providing computational advantages for functions with a large number of inputs. The main technical difference between forward and reverse mode is the point at which the matrix multiplication begins.
 

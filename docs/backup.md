@@ -42,9 +42,9 @@ See the following example of a trace table and its corresponding computational g
   These two approaches are useful for different types of problems, with forward mode providing computational advantages in terms of storage and reverse mode providing computational advantages for functions with a large number of inputs. The main technical difference between forward and reverse mode is the point at which the matrix multiplication begins.
 
 # How to Use
-Users can mainly interact with the BestorgAD package in two ways:
-1. Via the BestorgAD user interface (GUI + text UI)
-2. Via importing BestorgAD into existing code
+Users can mainly interact with the SwiftDiff package in two ways:
+1. Via the SwiftDiff user interface (GUI + text UI)
+2. Via importing SwiftDiff into existing code
 
 ## Import the Package
 Create a virtual environment:
@@ -55,7 +55,7 @@ activate vir_name
 ```
 Install the package:
 ```
-conda install -n BestorgAD
+conda install -n SwiftDiff
 ```
 
 ## Interacting with the GUI / Text UI
@@ -71,7 +71,7 @@ From here, a GUI or Text UI will appear, where users can input functions, select
 
 ## Importing the Package into Existing Code
 ```
-import BestorgAD
+import SwiftDiff
 ```
 
 Users can call the following functions after importing our package:
@@ -80,7 +80,7 @@ Users can call the following functions after importing our package:
 * generate_graph(function) - generates a computational graph
 * generate_tracetable(function, (coordinate)) - generates a trace table
 * (TBD) calculate_statistics(function, (coordinate), [methods]) - calculates statistics across different methods of AD
-[More information on BestorgAD methods within classes](#Implementation)
+[More information on SwiftDiff methods within classes](#Implementation)
 
 # Software Organization
 ## Directory structure:
@@ -128,7 +128,7 @@ We will distribute our package via PyPI and create a landing page with detailed 
 [Python package boilerplate](https://github.com/mtchavez/python-package-boilerplate) instead.
 
 # Implementation
-BestorgAD custom classes will serve as the core data structures of the package:
+SwiftDiff custom classes will serve as the core data structures of the package:
 
 ## Classes 
 
@@ -211,14 +211,14 @@ This class will inherit attributes and methods from an external GUI package ([Py
 
 
 # Licensing
-BestorgAD uses the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), 
-a copyleft license that makes the complete source code of licensed works and modifications available. This license allows others to copy, distribute, and fork BestorgAD given the license section remains unchanged.
+SwiftDiff uses the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), 
+a copyleft license that makes the complete source code of licensed works and modifications available. This license allows others to copy, distribute, and fork SwiftDiff given the license section remains unchanged.
 
 
 # Potential Extensions (TBD as project progresses)
 * Statistics Module - aggregates cost, efficiency, and error statistics across multiple cycles of AD using various methods
-* ML Integration - integrates BestorgAD into existing ML systems
-* AD for Neural Cellular Automata - implements BestorgAD in differentiable model of morphogenesis
+* ML Integration - integrates SwiftDiff into existing ML systems
+* AD for Neural Cellular Automata - implements SwiftDiff in differentiable model of morphogenesis
   * [Example of growing neural cellular automata](https://distill.pub/2020/growing-ca/)
 * Novel NLG Differentiation Algorithm - uses NLG technologies (e.g. [GPT3](https://openai.com/blog/gpt-3-apps/)) to compute derivatives
 * AD Builder Assistant - uses copilot technologies (e.g. [Codex](https://openai.com/blog/openai-codex/)) to help users build their own AD packages through natural language

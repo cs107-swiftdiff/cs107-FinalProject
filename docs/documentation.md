@@ -1,7 +1,7 @@
-<img src="https://github.com/cs107-bestorg/cs107-FinalProject/blob/main/docs/Logo.png" alt="Logo" width="400" height="330">
+<img src="https://github.com/cs107-swiftdiff/cs107-FinalProject/blob/main/docs/Logo.png" alt="Logo" width="400" height="330">
 
 # Introduction
-Bestorg software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. Our AD software, Bestorg, sequentially evaluates elementary functions, and avoids the complexity of symbolic differentiation and precision issues of numerical differentiation. By overcoming all the setbacks of both finite difference methods and symbolic derivatives, AD is the most efficient and effective method. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
+SwiftDiff software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. Our AD software, SwiftDiff, sequentially evaluates elementary functions, and avoids the complexity of symbolic differentiation and precision issues of numerical differentiation. By overcoming all the setbacks of both finite difference methods and symbolic derivatives, AD is the most efficient and effective method. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
 
 # Background
 
@@ -75,11 +75,11 @@ activate vir_name
 ```
 Install the package:
 ```
-pip install -n BestorgAD
+pip install -n SwiftDiff
 ```
 Users can also clone this repo:
 ```
-git clone https://github.com/cs107-bestorg/cs107-FinalProject
+git clone https://github.com/cs107-swiftdiff/cs107-FinalProject
 ```
 Install dependencies:
 ```
@@ -141,10 +141,10 @@ See demoAD.py for an interactive tutorial on primary usage.
 
 See demoReverse.py for an interactive tutorial on reverse mode usage.
 
-More information on BestorgAD methods can be found in the [Implementation](#Implementation) section.
+More information on SwiftDiff methods can be found in the [Implementation](#Implementation) section.
 
 ## Demos
-BestorgAD includes two basic demos.
+SwiftDiff includes two basic demos.
 To run the Main AD demo, run the following command:
 ```
 python demoAD.py
@@ -159,7 +159,7 @@ python demoReverse.py
 ## Directory structure:
 
 ```
-BestorgAD/
+SwiftDiff/
 ├── AD
 │   ├── AD_forward.py
 │   ├── AD_reverse.py
@@ -218,7 +218,7 @@ As you can see - all of our testing for each class was successful - they were al
 
 ### Distribution:
 OMIT(We will distribute our package via PyPI and create a landing page with detailed documentation and download options.)
-Bestorg AD is available on [PyPI](https://pypi.org/project/BestorgAD/) and [Github](https://github.com/cs107-bestorg/cs107-FinalProject). See Package Installation for more details.
+SwiftDiff is available on [PyPI](https://pypi.org/project/SwiftDiff/) and [Github](https://github.com/cs107-swiftdiff/cs107-FinalProject). See Package Installation for more details.
 
 
 ### Software Packaging:
@@ -263,7 +263,7 @@ class Node:
 * ```self.children``` - children of the node
 
 ## Elementary functions
-* BestorgAD overloads elementary functions to accomodate Dual objects and Node objects:
+* SwiftDiff overloads elementary functions to accomodate Dual objects and Node objects:
   * ```exp``` - calculates e to the power of the input
   * ```sin``` - calculates the sine of the input
   * ```cos``` - calculates cosine of the input
@@ -414,18 +414,18 @@ test.get_jacobian()
 Autodifferentiation has applications across all industries, including physics, biology, genetics, applied mathematics, optimization, statistics / machine learning, health science, and more.
 We believe that our software, if implemented correctly -  can be beneficial to all industries beyond software engineering. 
 
-In addition to applications within these industries, there are several ways in which the BestorgAD package can be expanded on in the future to include more functionality. We welcome community contribution - feel free to reach out or make a pull request to the repository.
+In addition to applications within these industries, there are several ways in which the SwiftDiff package can be expanded on in the future to include more functionality. We welcome community contribution - feel free to reach out or make a pull request to the repository.
 
 Potential features / expansions:
 * Visualization module - allowing users to visualize the workflow of calculations within forward and reverse mode AD
 * Statistics Module - aggregating cost, efficiency, and error statistics across multiple cycles of AD using various methods
-* ML Integration - integrating BestorgAD into existing ML systems
+* ML Integration - integrating SwiftDiff into existing ML systems
 * NLG AD Education Tool - using NLG technologies (e.g. [GPT3](https://openai.com/blog/gpt-3-apps/)) to interactively teach users about AD
 * AD Builder Assistant - using copilot technologies (e.g. [Codex](https://openai.com/blog/openai-codex/)) to help users build their own AD packages
 
 # Licensing
-BestorgAD uses the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), 
-a copyleft license that makes the complete source code of licensed works and modifications available. This license allows others to copy, distribute, and fork BestorgAD given the license section remains unchanged.
+SwiftDiff uses the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), 
+a copyleft license that makes the complete source code of licensed works and modifications available. This license allows others to copy, distribute, and fork SwiftDiff given the license section remains unchanged.
 
 # Broader Impact and Inclusivity Statement
 

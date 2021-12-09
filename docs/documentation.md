@@ -75,7 +75,7 @@ activate vir_name
 ```
 Install the package:
 ```
-pip install swiftdiff==0.0.1
+pip install swiftdiff==0.0.2
 ```
 Users can also clone this repo:
 ```

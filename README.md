@@ -1,10 +1,10 @@
-# cs107-FinalProject
-# WELCOME TO SWIFTDIFF! Get ready to be amazed :)
+# SwiftDiff
 
-## Group 9
-### Nadine Lee
-### Li Sun
-### Alice Cai
+### Authors: Nadine Lee, Li Sun, Alice Cai
+
+## Introduction
+
+SwiftDiff software performs automatic differentiation (AD) for the user. AD is widely used across fields of science, engineering, and mathematics. Because the ability to compute derivates is key to research and applications in these fields, developing and implementing methodologies of AD that operate with speed and precision is crucial to enabling progress. Our AD software, SwiftDiff, sequentially evaluates elementary functions, and avoids the complexity of symbolic differentiation and precision issues of numerical differentiation. By overcoming all the setbacks of both finite difference methods and symbolic derivatives, AD is the most efficient and effective method. The system we present implements multiple methods of AD that compute the derivatives of a function in a single flow with machine precision and accuracy.
 
 ## Broader Impact
  

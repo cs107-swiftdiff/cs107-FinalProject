@@ -229,16 +229,20 @@ Bestorg AD is available on [PyPI](https://pypi.org/project/BestorgAD/) and [Gith
 ## Important attributes:
 class AutoDiff:
 * self.f - function
+
 class Forward:
 * self.f - function
+ 
 class Reverse:
 * self.f - function
 * self.variables - variables in the function
+
 class Dual:
 * self.value - value of the variable
 * self.derivative - derivative of the variable
 * self.index - index of the variable inside the function
 * self.total - total number of variables in the function
+
 class Node:
 * self.value - value of the node
 * self.derivative - derivative of the node

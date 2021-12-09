@@ -1,5 +1,6 @@
 # cs107-FinalProject
-Final project repo
+# WELCOME TO SWIFTDIFF! Get ready to be amazed :)
+
 ## Group 9
 ### Nadine Lee
 ### Li Sun

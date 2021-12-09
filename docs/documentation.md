@@ -7,7 +7,7 @@ Bestorg software performs automatic differentiation (AD) for the user. AD is wid
 
 **Definition of a Derivative:**
 
-<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\lim_{h\to0}\frac{f(x + h) - f(x)}{h}">
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}\lim_{h\to0}\frac{f(x%2Bh)-f(x)}{h}">
 
 Originally conceptualized by Robert Edwin Wengert in his 1964 paper, *A simple automatic derivative evaluation program,* automatic differentiation has garnered much interest in the computational science, machine learning, and optimization communities, with its various forms being implemented in industry-standard libraries such as TensorFlow. 
 
@@ -22,12 +22,12 @@ Automatic differentiation, also known as algorithmic differentiation, computatio
 
 Dual numbers are utilized in our forward mode to represent the value and the derivative part of a variable because of its special property for addition and multiplication.
 
-A dual number is made up of a real part and a dual part, which is writen as <img src="https://render.githubusercontent.com/render/math?math=\color{gray}z = a + b\epsilon">, where <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon ^2 = 0">, but <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon \ne 0">
+A dual number is made up of a real part and a dual part, which is writen as <img src="https://render.githubusercontent.com/render/math?math=\color{gray}z = a %2B b\epsilon">, where <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon ^2 = 0">, but <img src="https://render.githubusercontent.com/render/math?math=\color{gray}\epsilon \ne 0">
 
 Here are the definitions for addition and multiplication dual numbers that we utilize for our forward mode:
 
-<img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1+z_2 = (a_1 + b_1\epsilon) + (a_2 + b_2\epsilon)=(a_1+a_2)+(b_1+b_2)\epsilon">
-<img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1z_2 = (a_1 + b_1\epsilon)(a_2 + b_2\epsilon)=(a_1a_2)+(a_1b_1+a_2b_2)\epsilon">
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1%2Bz_2=(a_1%2Bb_1\epsilon)%2B(a_2%2Bb_2\epsilon)=(a_1%2Ba_2)%2B(b_1%2Bb_2)\epsilon">
+<img src="https://render.githubusercontent.com/render/math?math=\color{gray}z_1z_2 = (a_1 %2B b_1\epsilon)(a_2 %2B b_2\epsilon)=(a_1a_2)%2B(a_1b_1%2Ba_2b_2)\epsilon">
 
 ## Components of Automatic Differentiation:
 
